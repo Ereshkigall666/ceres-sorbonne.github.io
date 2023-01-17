@@ -4,8 +4,8 @@ import * as React from 'react'
 
 
 export const Card = ({postData, toggleTag, selectedTags}) => {
-    const {date, slug, image, sound, collection} = postData.fields
-    const {title, tags, abstract} = postData.frontmatter
+    const {date, slug, image, collection} = postData.fields
+    const {title, tags, abstract, sound} = postData.frontmatter
 
     return (
     <div className="card">
