@@ -1,5 +1,4 @@
 node_modules/
 .cache/
 public
-src/data
 package-lock.json
