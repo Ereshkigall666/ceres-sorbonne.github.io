@@ -4,8 +4,8 @@ import * as React from 'react'
 
 
 export const LongCard = ({postData, toggleTag, selectedTags}) => {
-    const {date, slug, image, sound, collection} = postData.fields
-    const {title, tags, abstract} = postData.frontmatter
+    const {date, slug, image, collection} = postData.fields
+    const {title, tags, abstract, sound} = postData.frontmatter
 
     return (
     <div className="long-card">
@@ -17,9 +17,9 @@ export const LongCard = ({postData, toggleTag, selectedTags}) => {
                 {tags ? tags.map(t => <Tag tagName={t} selectedTags={selectedTags} toggleTag={toggleTag} />) : ""}
             </div>
             {
-                sound?.publicURL && (
+                sound && (
                     <audio controls>
-                        <source src={sound.publicURL} type="audio/wav"/>
+                        <source src={sound} type="audio/wav"/>
                     </audio>
                 )
             }

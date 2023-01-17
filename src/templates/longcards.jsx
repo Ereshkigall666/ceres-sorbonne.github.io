@@ -50,15 +50,13 @@ export const query = graphql`
             title
             author
             abstract
+            sound
             }
             fields {
             date(formatString: "DD MMMM, YYYY", locale: "fr")
             slug
             collection
             image {
-                publicURL
-            }
-            sound {
                 publicURL
             }
             }

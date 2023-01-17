@@ -59,7 +59,6 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // Create all pages with the same template, this might change later if we want to do markdown pages with specifics templates
-  const posts = result.data.allMarkdownRemark.edges.filter(el => el.node.fields.collection === 'blog')
 
   result.data.allMarkdownRemark.edges.forEach((edge, index) => {
     const fields = edge.node.fields
@@ -133,7 +132,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     const files = fs.readdirSync(path.dirname(node.fileAbsolutePath)).filter(el => el !== 'index.md')
     const images = files.filter(el => el.endsWith('.png') || el.endsWith('.jpeg') || el.endsWith('.jpg'))
-    const sounds = files.filter(el => el.endsWith('.mp3') || el.endsWith('.wav') || el.endsWith('.ogg'))
+    // const sounds = files.filter(el => el.endsWith('.mp3') || el.endsWith('.wav') || el.endsWith('.ogg'))
     
     createNodeField({
       node: node,
@@ -141,10 +140,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: images[0] ?? null
     })
 
-    createNodeField({
-      node: node,
-      name: "sound",
-      value: sounds[0] ?? null
-    })
+    // createNodeField({
+    //   node: node,
+    //   name: "sound",
+    //   value: sounds[0] ?? null
+    // })
   }
 }

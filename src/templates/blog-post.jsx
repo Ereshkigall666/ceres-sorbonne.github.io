@@ -4,8 +4,7 @@ import Layout from '../components/layout'
 import '../style/article.css'
 
 const BlogPost = ({ data, children }) => {
-  const { author, title, tags, abstract } = data.markdownRemark.frontmatter
-  const sound = data.markdownRemark.fields.sound
+  const { author, title, tags, abstract, sound} = data.markdownRemark.frontmatter
   const authorName = data.site.siteMetadata.authors.find(el => el.id === author).name
   return (
     <Layout>
@@ -24,9 +23,9 @@ const BlogPost = ({ data, children }) => {
           <article id="article">
             { abstract ? <aside><p>{abstract}</p></aside> : ''}
             {
-                sound?.publicURL && (
+                sound && (
                     <audio controls>
-                        <source src={sound.publicURL} type="audio/wav"/>
+                        <source src={sound} type="audio/wav"/>
                     </audio>
                 )
             }
@@ -58,14 +57,12 @@ export const query = graphql`
         title
         tags
         abstract
+        sound
       }
       fields {
         date(formatString: "DD MMMM, YYYY", locale: "fr")
         slug
         collection
-        sound{
-          publicURL
-        }
       }
       tableOfContents
     }
