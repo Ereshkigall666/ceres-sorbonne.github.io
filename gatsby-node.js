@@ -1,7 +1,7 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
 const fs = require('fs')
-const thesaurus = require(`./src/data/thesaurus.json`)
+// const thesaurus = require(`./src/data/thesaurus.json`)
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
