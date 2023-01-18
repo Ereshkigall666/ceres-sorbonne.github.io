@@ -9,4 +9,4 @@ git pull origin main
 cd ../..
 
 npx gatsby clean
-npm start
+# npm start
