@@ -71,7 +71,7 @@ const Layout = ( {children} ) => {
 
 const Header = ({menu}) => <header>
     <nav id="header">
-        <a id="header-logo" href="/">Ceres</a>
+        <Link id="header-logo" to="/">Ceres</Link>
         {menu.map((el, i) => !el.link ? <hr className="header-div-v" key={i}/> : <Link className="header-link" key={i} to={el.link}>{el.name}</Link>)}
     </nav>
     <hr id="header-div-h" />
