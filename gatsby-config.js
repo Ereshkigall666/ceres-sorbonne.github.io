@@ -25,16 +25,26 @@ let config = {
         "icon": "src/images/icon.png"
       }
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        footnotes: true,
         plugins: [
+          // `gatsby-remark-copy-linked-files`,
           {
-            resolve: `gatsby-remark-images`,
+            resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              maxWidth: 590
-            },
+              ignoreFileExtensions: []
+            }
           },
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: 590
+          //   },
+          // },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             // options: {
@@ -42,14 +52,11 @@ let config = {
             // },
           },
           `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`
         ],
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: 'gatsby-source-filesystem',
       options: {

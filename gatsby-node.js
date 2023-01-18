@@ -148,6 +148,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
+// définir le schéma graphql pour éviter les erreurs de champs manquants
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
