@@ -1,9 +1,10 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import * as React from 'react'
 import Layout from '../components/layout'
 import Planet from '../images/5.png'
 import { Card } from "../components/card"
-import {filterNodes} from "../helpers"
+import {filterNodes, isDateOnCallendar} from "../helpers"
+import Calendar from 'react-calendar'
 
 import "../style/accueil.css"
 
@@ -16,7 +17,7 @@ const Home = ({ data }) => {
                 const filtered = filterNodes(nodes, search, tags);
                 return (
                     <div>
-                        <HomeHeader />
+                        <HomeHeader nodes={nodes}/>
                         <div id="last-posts-wrapper">
                             <h2 id="last-posts">Dernières publications</h2>
                             <div id="cards-wrapper">
@@ -32,7 +33,7 @@ const Home = ({ data }) => {
     )
 }
 
-const HomeHeader = () => (
+const HomeHeader = ({nodes}) => (
         <header>
             <img id="landing-image" src={Planet} style={{maxWidth: "100%", margin: 0}}/>
             <h1 id="landing-title">Ceres</h1>
@@ -55,7 +56,17 @@ const HomeHeader = () => (
                         <a className="button" href="http://memes.sorbonne-universite.fr/">En savoir plus ↗</a>
                     </div>
                 </div>
-                <img className="landing-block" src={Planet} />
+                <Calendar className="landing-block" tileContent={({ date }) => {
+                    const events = nodes.filter(node => node.frontmatter.event)
+                    for(const event of events){
+                        if(isDateOnCallendar({calendarDate: date, eventDate: event.fields.dateRaw})){
+                            return <Link className="event" to={`/${event.fields.collection}/` + event.fields.slug}><p>{event.frontmatter.title}</p></Link>
+                        }
+                    }
+                    return null
+                }
+                }/>
+                {/* <img className="landing-block" src={Planet} /> */}
             </div>
         </header>
         )
@@ -70,10 +81,12 @@ export const query = graphql`
                 author
                 abstract
                 sound
+                event
             }
             fields {
                 collection
                 date(formatString: "DD MMMM, YYYY", locale: "fr")
+                dateRaw: date
                 slug
                 image {
                     publicURL

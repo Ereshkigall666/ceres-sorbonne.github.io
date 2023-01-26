@@ -28,3 +28,10 @@ export const filterNodes = (nodes, search, searchTags) => nodes.filter(node => {
         return node
     }
 })
+
+
+export const isDateOnCallendar = ({calendarDate, eventDate}) => {
+    console.log(calendarDate.toISOString())
+    console.log(eventDate)
+    return calendarDate.toISOString().split('T')[0] === eventDate
+}
