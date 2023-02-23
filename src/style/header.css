@@ -43,3 +43,17 @@
 #header-div-h {
     margin: 0;
 }
+
+#header .color-mode-button {
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--main-color);
+    background: none;
+    border: none;
+}
+
+#header .color-mode-button:focus {
+    outline: none;
+    background: none !important;
+}

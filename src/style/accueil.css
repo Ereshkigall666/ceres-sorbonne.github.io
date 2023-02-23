@@ -2,6 +2,8 @@ main>header {
     margin: auto;
 }
 
+/* Blocs de la page d'accueil */
+
 #landing-image {
     width: 100%;
     object-fit: cover;
@@ -39,6 +41,102 @@ img.landing-block {
     object-fit: cover;
     margin: 0px;
 }
+
+/* Calendrier */
+
+.react-calendar {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.react-calendar__navigation {
+    margin: 0rem 0rem 1rem 0rem;
+    width: fit-content;
+    background-color: var(--dimmed-background);
+}
+
+.react-calendar__navigation__arrow,
+.react-calendar__navigation__label {
+    padding: 0.3rem 0.7rem;
+    margin: 0rem;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.react-calendar__navigation__arrow {
+    font-family: "Inter";
+    cursor: pointer;
+    background: var(--light-background);
+    color: var(--light-background);
+    font-size: 0.1rem;
+}
+
+.react-calendar__navigation__prev-button::after {
+    font-size: 1rem;
+    content: "←";
+    color: var(--text-color) !important;
+}
+
+.react-calendar__navigation__next-button::after {
+    font-size: 1rem;
+    content: "→";
+    color: var(--text-color) !important;
+}
+
+.react-calendar__navigation__label {
+    background: var(--dimmed-background);
+    color: var(--text-color);
+    width: 15rem;
+}
+
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__next2-button {
+    display: none;
+}
+
+.react-calendar__viewContainer {
+    box-sizing: border-box;
+    border: var(--half-hr);
+    /* border-radius: var(--card-border-radius); */
+    /* overflow: hidden; */
+}
+
+.react-calendar__month-view__weekdays,
+.react-calendar__month-view__days {
+    width: 100%;
+    display: flex;
+}
+
+.react-calendar__month-view__weekdays__weekday,
+.react-calendar__month-view__days__day {
+    color: var(--text-color);
+    border: var(--half-hr);
+    padding: 0.3rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    background-color: var(--light-background);
+    flex: 1 0 0 !important;
+}
+
+.react-calendar__month-view__days__day {
+    background: var(--background-color);
+    flex: 0 0 calc(100 / 7) !important;
+    min-height: 5rem;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    background: var(--dimmed-background) !important;
+}
+
+abbr {
+    display: block;
+    margin-bottom: 0.2rem;
+    text-decoration: none;
+}
+
+/* Derniers posts */
 
 #last-posts-wrapper {
     margin: 7rem auto 0 auto;

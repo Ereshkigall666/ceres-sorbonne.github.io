@@ -13,7 +13,7 @@
 .long-card {
     position: relative;
     flex: 1 1 32rem;
-    max-width: 100%;
+    max-width: min(100%, 40rem);
     height: 15rem;
     padding: var(--card-padding);
     border: var(--hr);

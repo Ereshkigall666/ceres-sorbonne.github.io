@@ -9,7 +9,7 @@ import "../style/cards.css"
 const CardsLayout = ({ data }) => {
     const nodes = data.allMarkdownRemark.nodes
     return (
-        <Layout>
+        <Layout nodes={nodes}>
             {/* petite astuce pour passer une fonction qui rend le composant actuel au layout pour que le layout puisse passer les paramètres nécessaires au filtrage*/}
             {(toggleTag, tags, search) => { 
                 const filtered = filterNodes(nodes, search, tags);
@@ -60,7 +60,7 @@ export const query = graphql`
                 publicURL
             }
             }
-            excerpt
+            excerpt(pruneLength: 600)
         }
     }
 }

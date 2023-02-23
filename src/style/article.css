@@ -8,6 +8,7 @@
 /* Article */
 audio{
     width: 100%;
+    margin: 0rem 0rem 0rem 1rem;
 }
 
 #article-container {
@@ -21,11 +22,11 @@ audio{
 
 #article-container>header{
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 #article-meta {
-    font-style: italic;
-    color: lightslategray;
+    color: var(--disabled-color);
 }
 /* Table des matières */
 
@@ -46,18 +47,19 @@ audio{
 #toc-container>nav>ul {
     max-height: calc(85vh - 12rem);
     overflow: scroll;
-    margin: 0.3rem 0 1rem 0;
+    margin: 0rem 0 0.6rem 0;
 }
 
 #toc-container a {
-    transition: 0s;
+    transition: 0.1s;
     font-size: 95%;
     color: var(--disabled-color);
+    text-decoration-color: var(--hr-color);
 }
 
 #toc-container a:hover {
-    color: var(--text);
-    text-decoration: none;
+    color: var(--text-color);
+    text-decoration-color: var(--text-color);
 }
 
 #toc-container li {
@@ -81,7 +83,7 @@ audio{
 #tags-container {
     border-top: var(--hr);
     border-bottom: var(--hr);
-    padding: 0.8rem;
+    padding: 0.6rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -103,6 +105,26 @@ img {
     max-height: 45rem;
     display: block;
     margin: 1rem auto 1rem auto;
+}
+
+/* Images */
+
+img {
+    max-width: 90%;
+    max-height: 70vh;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 0.16rem;
+}
+
+img[alt="big"] {
+    max-width: 100%;
+    max-height: 90vh;
+}
+
+img[alt="small"] {
+    max-width: 70%;
+    max-height: 60vh;
 }
 
 /* Breakpoints */
