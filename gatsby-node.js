@@ -160,6 +160,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       sound: String
       author: String
       title: String!
+      event: Boolean
     }
   `
   createTypes(typeDefs)

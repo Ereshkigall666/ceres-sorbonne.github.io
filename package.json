@@ -33,7 +33,9 @@
     "gatsby-transformer-remark": "^5.24.0",
     "gatsby-transformer-sharp": "^4.24.0",
     "lodash": "^4.17.21",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
+    "react-calendar": "^4.0.0",
     "react-dom": "^18.2.0",
     "source-map-generator": "^0.8.0"
   }
