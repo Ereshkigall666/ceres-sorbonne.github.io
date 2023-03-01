@@ -32,7 +32,7 @@ const Layout = ({ children, nodes }) => {
     })
     const menu = [{ name: 'Accueil', link: '/' }, { name: '|' }, ...pages]
     const nodesToUse = nodes ? nodes : data.allMarkdownRemark.nodes
-    const allTags = new Set(nodesToUse.map(el => el.frontmatter.tags).filter(el => el !== null).flat())
+    const allTags = new Set(nodesToUse.map(el => el.frontmatter.tags).filter(el => el !== null).flat().sort())
     // TODO: ajouter la requête graphql qui récupèrera le thésaurus
     let [tags, setTags] = React.useState([]);
     let [search, setSearch] = React.useState("");
