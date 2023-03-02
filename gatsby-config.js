@@ -12,6 +12,7 @@ let config = {
       { id: `thomas`, name: `Thomas Bottini` },
       { id: `felix`, name: `Félix Alié` },
       { id: `edouard`, name: `Édouard Bouté` },
+      { id: `victor`, name: `Victor Ecrement` },
       { id: `ceres`, name: `L'équipe CERES` }
     ],
     pages: []
@@ -22,7 +23,7 @@ let config = {
     "gatsby-plugin-sitemap", {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        "icon": "src/images/icon.png"
+        "icon": "src/images/eclipse.svg"
       }
     },
     "gatsby-plugin-sharp",

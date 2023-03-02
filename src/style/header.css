@@ -13,7 +13,8 @@
 #header a {
     display: block;
     color: var(--main-color);
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: rgb(var(--main), 0);
     white-space: nowrap;
 }
 
@@ -44,16 +45,15 @@
     margin: 0;
 }
 
-#header .color-mode-button {
-    margin-bottom: 0.3rem;
-    cursor: pointer;
-    font-size: 2rem;
+svg.color-mode {
+    margin: 0rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: var(--main-color);
-    background: none;
-    border: none;
+    fill: currentColor;
 }
 
-#header .color-mode-button:focus {
+#header .discrete-button:focus {
     outline: none;
-    background: none !important;
+    border: none !important;
 }

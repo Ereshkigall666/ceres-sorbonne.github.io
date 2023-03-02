@@ -1,7 +1,7 @@
 /* Texte d'introduction */
 
-main>header {
+#cards-introduction {
     margin: auto;
-    max-width: 47rem;
+    max-width: var(--art-width);
     padding: 0 2rem 3rem 2rem;
 }

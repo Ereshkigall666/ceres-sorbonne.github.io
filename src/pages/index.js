@@ -22,14 +22,10 @@ const Home = ({ data }) => {
                 return (
                     <div>
                         <HomeHeader nodes={nodes} />
-                        <div id="last-posts-wrapper">
                             <h2 ref={lastPosts} id="last-posts">Dernières publications</h2>
-                            <div id="cards-wrapper">
-                                <div id="cards-container">
-                                    {filtered.map(el => <Card postData={el} toggleTag={toggleTag} selectedTags={tags} />)}
-                                </div>
+                            <div id="cards-container">
+                                {filtered.map(el => <Card postData={el} toggleTag={toggleTag} selectedTags={tags} />)}
                             </div>
-                        </div>
                     </div>
                 )
             }
@@ -57,7 +53,7 @@ const HomeHeader = ({ nodes }) => (
                     </ul>
                 </p>
                 <p>
-                    CERES offre un accompagnement technique et méthodologique dans la prise en main d’outils informatiques disponibles et œuvre au déploiement d’outils informatiques utiles à la communauté des chercheurs et chercheuses de la Faculté des Lettres. L’unité de service conduit par ailleurs une réflexion sur le statut épistémologique de ces outils et méthodes dans la recherche en SHS, mettant en avant le caractère central de l’activité interprétative du chercheur ou de la chercheuse face aux outils informatiques. Plus largement, il s’agit pour le CERES de contribuer à l’émergence de nouvelles pratiques de recherche en milieu numérique, au service des approches spécifiques des SHS. Le CERES est fort d’une <a href="../membres">équipe interdisciplinaire</a>.
+                    CERES offre un accompagnement technique et méthodologique dans la prise en main d’outils informatiques disponibles et œuvre au déploiement d’outils informatiques utiles à la communauté des chercheurs et chercheuses de la Faculté des Lettres. L’unité de service conduit par ailleurs une réflexion sur le statut épistémologique de ces outils et méthodes dans la recherche en SHS, mettant en avant le caractère central de l’activité interprétative du chercheur ou de la chercheuse face aux outils informatiques. Plus largement, il s’agit pour le CERES de contribuer à l’émergence de nouvelles pratiques de recherche en milieu numérique, au service des approches spécifiques des SHS. Le CERES est fort d’une <a href="/membres">équipe interdisciplinaire</a>.
                 </p>
             </div>
             <div className="landing-block">

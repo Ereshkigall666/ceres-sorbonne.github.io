@@ -13,7 +13,7 @@ main>header {
 h1#landing-title {
     position: relative;
     top: -3.5rem;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 7rem;
     margin: 0 0 0 calc(1rem + 2.5vw);
     text-align: left;
@@ -48,6 +48,12 @@ img.landing-block {
     font-family: "IBM Plex Sans", sans-serif;
 }
 
+.react-calendar a {
+    display: block;
+    box-shadow: none !important;
+    padding: 0.2rem 0.1rem;
+}
+
 .react-calendar__navigation {
     margin: 0rem 0rem 1rem 0rem;
     width: fit-content;
@@ -68,6 +74,7 @@ img.landing-block {
     background: var(--light-background);
     color: var(--light-background);
     font-size: 0.1rem;
+    border-radius: 0.2rem;
 }
 
 .react-calendar__navigation__prev-button::after {
@@ -96,8 +103,6 @@ img.landing-block {
 .react-calendar__viewContainer {
     box-sizing: border-box;
     border: var(--half-hr);
-    /* border-radius: var(--card-border-radius); */
-    /* overflow: hidden; */
 }
 
 .react-calendar__month-view__weekdays,
@@ -110,7 +115,7 @@ img.landing-block {
 .react-calendar__month-view__days__day {
     color: var(--text-color);
     border: var(--half-hr);
-    padding: 0.3rem;
+    padding: 0.3rem 0.4rem;
     font-size: 0.95rem;
     text-align: center;
 }
@@ -130,6 +135,15 @@ img.landing-block {
     background: var(--dimmed-background) !important;
 }
 
+.react-calendar__tile--now abbr {
+    background-color: rgb(var(--text), 0.7);
+    border-radius: 100rem;
+    color: var(--background-color);
+    width: min-content;
+    padding: 0.4rem 0.7rem;
+    margin: 0.1rem auto 0.3rem auto;
+}
+
 abbr {
     display: block;
     margin-bottom: 0.2rem;
@@ -138,12 +152,8 @@ abbr {
 
 /* Derniers posts */
 
-#last-posts-wrapper {
-    margin: 7rem auto 0 auto;
-    max-width: 70rem;
-}
-
-#last-posts-wrapper>h2 {
-    margin-left: 1rem;
-    margin-right: 1rem;
+#last-posts {
+    display: block;
+    max-width: var(--max-cards-width);
+    margin: 10rem auto 1.5rem auto;
 }

@@ -1,9 +1,3 @@
-:root {
-    --toc-width: calc(20rem);
-    --toc-padding: 1rem;
-    --ext-margin: max(1rem, 40vw - 25rem);
-    --art-width: 43rem;
-}
 
 /* Article */
 audio{

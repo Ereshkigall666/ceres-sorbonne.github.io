@@ -24,9 +24,7 @@ footer .logo {
     display: block;
     margin: 1.5rem auto 0 auto;
     color: var(--main-color);
+    fill: currentColor;
     max-width: 15rem;
     max-height: 15rem;
-    /* background-color: var(--main-color);
-    -webkit-mask: url('../images/logo.svg') no-repeat center;
-    mask: url('../images/logo.svg') no-repeat center; */
 }

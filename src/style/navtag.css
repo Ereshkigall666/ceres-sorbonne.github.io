@@ -61,8 +61,8 @@ only screen and (hover: none) and (pointer: coarse) {
 #tags-panel-tree {
     visibility: hidden;
     flex: 1 1 auto;
-    padding: 0;
-    margin: 0;
+    padding: 0rem;
+    margin: 1rem 0rem 0rem 0rem;
     overflow-y: scroll;
     overflow-x: hidden;
     /* Cacher la barre de défilement pour Internet Explorer, Edge et Firefox */
@@ -78,7 +78,7 @@ only screen and (hover: none) and (pointer: coarse) {
 /* Tags du panneau */
 
 #tags-panel-tree .small-tag {
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
 }
 
 /* Liste non ordonnée de tags */
@@ -86,7 +86,7 @@ only screen and (hover: none) and (pointer: coarse) {
 .wild-tags{
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.5rem;
 }
 /* Listes de tags */
 

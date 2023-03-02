@@ -1,8 +1,8 @@
 /* Variables générales */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import url('https: //rsms.me/inter/inter.css');
 
 :root {
@@ -10,8 +10,7 @@
     /* --test: rgb(132, 177, 255); */
     --main: 132, 177, 255;
 
-    /* Niveaux de gris des couleurs neutres
-        Ajuster pour un thème clair */
+    /* Niveaux de gris des couleurs neutres */
     --text-num: 255;
     --bg-num: 30;
 
@@ -51,6 +50,13 @@
     --in-card-margin: 0.6rem;
     --card-padding: 1rem;
     --card-border-radius: 0.4rem;
+    --max-cards-width: 80rem;
+
+    /* Mesures des articles */
+    --toc-width: calc(20rem);
+    --toc-padding: 1rem;
+    --ext-margin: max(1rem, 40vw - 25rem);
+    --art-width: 43rem;
 }
 
 ::selection {
@@ -58,8 +64,8 @@
     background: rgba(var(--main), 0.8);
 }
 
-a:focus,
-button:focus {
+a:focus-visible,
+button:focus-visible {
     outline: var(--hr-main);
     background-color: rgba(var(--main), 0.15) !important;
 }
@@ -219,7 +225,7 @@ pre>code {
 /* Emphase */
 
 strong {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 em {
@@ -229,6 +235,8 @@ em {
 
 /* Liens externes */
 
+a:not([href^="../"]),
+a:not([href^="./"]),
 a:not([href^="/"]) {
     color: var(--main-color);
     transition: 0.1s;
@@ -240,12 +248,16 @@ a:not([href^="/"]) {
 }
 
 
+a:not([href^="../"]):hover,
+a:not([href^="./"]):hover,
 a:not([href^="/"]):hover {
     text-decoration-color: var(--main-color);
 }
 
 /* Liens internes au site insérés dans le texte */
 
+a:not([class]):not([id])[href^="../"],
+a:not([class]):not([id])[href^="./"],
 a:not([class]):not([id])[href^="/"] {
     text-decoration: none;
     font-family: "IBM Plex Sans";
@@ -256,11 +268,15 @@ a:not([class]):not([id])[href^="/"] {
     transition: 0.1s;
 }
 
+a:not([class]):not([id])[href^="../"]:after,
+a:not([class]):not([id])[href^="./"]:after,
 a:not([class]):not([id])[href^="/"]:after {
     font-family: "Inter";
     content: " ↗";
 }
 
+a:not([class]):not([id])[href^="../"]:hover,
+a:not([class]):not([id])[href^="./"]:hover,
 a:not([class]):not([id])[href^="/"]:hover {
     text-decoration: none;
     background: rgba(var(--main), 0.3);
@@ -329,7 +345,7 @@ hr {
 
 table {
     margin: 1rem auto 1rem auto;
-    border-radius: var(--border-width);
+    border-radius: var(--card-border-radius);
     box-shadow: 0 0 0 0.1rem var(--hr-color);
     border-collapse: collapse;
     border-style: hidden;
@@ -377,7 +393,7 @@ table tr th:last-child {
 /* Cartes général */
 
 #cards-container {
-    max-width: 70rem;
+    max-width: var(--max-cards-width) !important;
     margin: 0 auto 3rem auto;
     padding: 0 2rem;
     display: flex;
@@ -492,7 +508,7 @@ table tr th:last-child {
 }
 
 .button,
-.arrow {
+.discrete-button {
     display: block;
     text-align: center;
     border-radius: 0.4rem;
@@ -505,7 +521,7 @@ table tr th:last-child {
 }
 
 .button:hover,
-.arrow:not(.disabled):hover {
+.discrete-button:not(.disabled):hover {
     background-color: rgba(var(--main), 0.3);
     cursor: pointer;
 }
@@ -520,12 +536,13 @@ table tr th:last-child {
     color: var(--background-color) !important;
 }
 
-.arrow {
+.discrete-button {
     padding: 0.5rem 0.7rem 0.5rem 0.7rem;
     font-family: "Inter";
+    border: none;
 }
 
-.arrow.disabled {
+.discrete-button.disabled {
     color: var(--disabled-color) !important;
 }
 
@@ -539,10 +556,10 @@ input {
     font-size: 0.9rem;
     border-radius: 0.2rem;
     padding: 0.5rem;
-    margin: 1rem 0 1rem 0;
+    margin: 0.6rem 0;
 }
 
-input:focus {
+input:focus-visible {
     outline: none;
     border: var(--hr-main);
 }

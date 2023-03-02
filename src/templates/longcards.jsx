@@ -11,26 +11,25 @@ const CardsLayout = ({ data }) => {
     return (
         <Layout nodes={nodes}>
             {/* petite astuce pour passer une fonction qui rend le composant actuel au layout pour que le layout puisse passer les paramètres nécessaires au filtrage*/}
-            {(toggleTag, tags, search) => { 
+            {(toggleTag, tags, search) => {
                 const filtered = filterNodes(nodes, search, tags);
                 const description = nodes.filter(node => node.fields.slug === "")[0]
                 return (
                     <div>
                         {
-                        description &&
-                        (<header className="cards-header">
+                            description &&
+                            (<header id="cards-introduction">
                                 <h1>{description.frontmatter.title}</h1>
                                 <p dangerouslySetInnerHTML={{ __html: description.html }} />
-                        </header>
-                        )
+                            </header>
+                            )
                         }
-                        <div id="cards-wrapper">
-                            <div id="cards-container">
-                                {filtered.map(el => <LongCard postData={el} toggleTag={toggleTag} selectedTags={tags}/>)}
-                            </div>
+                        <div id="cards-container">
+                            {filtered.map(el => <LongCard postData={el} toggleTag={toggleTag} selectedTags={tags} />)}
                         </div>
                     </div>
-                )}
+                )
+            }
             }
         </Layout>
     )
