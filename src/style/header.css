@@ -46,9 +46,9 @@
 }
 
 svg.color-mode {
-    margin: 0rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    margin: 0.2rem 0rem 0rem 0rem;
+    width: 1.3rem;
+    height: 1.3rem;
     color: var(--main-color);
     fill: currentColor;
 }
