@@ -24,7 +24,7 @@ const Home = ({ data }) => {
                         <HomeHeader nodes={nodes} />
                         <h2 ref={lastPosts} id="last-posts">Dernières publications</h2>
                         <div id="cards-container">
-                            {filtered.map(el => <Card postData={el} toggleTag={toggleTag} selectedTags={tags} />)}
+                            {filtered.map((el, index) => <Card postData={el} key={index} toggleTag={toggleTag} selectedTags={tags} />)}
                         </div>
                     </div>
                 )
@@ -58,7 +58,7 @@ const HomeHeader = ({ nodes }) => (
             </div>
             <div className="landing-block">
                 <h3>Évènements à venir</h3>
-                <Calendar maxDetail="month" minDetail="month" className="landing-block" tileContent={({ date }) => {
+                <Calendar locale="fr-FR" maxDetail="month" minDetail="month" className="landing-block" tileContent={({ date }) => {
                     const events = nodes.filter(node => node.frontmatter.event)
                     for (const event of events) {
                         if (isDateOnCallendar({ calendarDate: date, eventDate: event.fields.dateRaw })) {

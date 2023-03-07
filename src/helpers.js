@@ -31,7 +31,6 @@ export const filterNodes = (nodes, search, searchTags) => nodes.filter(node => {
 
 
 export const isDateOnCallendar = ({calendarDate, eventDate}) => {
-    console.log(calendarDate.toISOString())
-    console.log(eventDate)
-    return calendarDate.toISOString().split('T')[0] === eventDate
+    const isoDate = new Date(calendarDate.getTime() - (calendarDate.getTimezoneOffset() * 60000)).toISOString();
+    return isoDate.split('T')[0] === eventDate
 }

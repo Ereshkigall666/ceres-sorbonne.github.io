@@ -47,7 +47,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const pagesToCreate = result.data.site.siteMetadata.pages
 
   pagesToCreate.forEach(page => {
-    console.log(page)
     const [template, pageName] = page.split('_')
     createPage({
       path: `/${pageName}/`,
@@ -101,8 +100,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
 
     const slug = createFilePath({ node, getNode }).replace('/', '')
-
-    // console.log(createFilePath({node, getNode}))
 
     createNodeField({
       node: node,

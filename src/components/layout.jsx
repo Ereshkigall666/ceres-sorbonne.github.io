@@ -141,7 +141,6 @@ export const Tag = ({ tagName, selectedTags, toggleTag, nav = false }) =>
 
 
 const LeftNav = ({ allTags, open, setOpen, selectedTags, toggleTag, search, setSearch }) => {
-    console.log(allTags)
     return (
         <div id="tags-panel-container" style={{ left: open ? '1rem' : '-18rem', 'padding-right': open ? '1rem' : '0.5rem' }}>
             <nav id="tags-panel">
