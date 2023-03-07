@@ -56,8 +56,10 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY", locale: "fr")
             slug
             image {
-                publicURL
-            }
+                    childImageSharp {
+                        gatsbyImageData(placeholder: TRACED_SVG, width: 400)
+                    }
+                }
             }
             excerpt(pruneLength: 600)
         }

@@ -22,10 +22,10 @@ const Home = ({ data }) => {
                 return (
                     <div>
                         <HomeHeader nodes={nodes} />
-                            <h2 ref={lastPosts} id="last-posts">Dernières publications</h2>
-                            <div id="cards-container">
-                                {filtered.map(el => <Card postData={el} toggleTag={toggleTag} selectedTags={tags} />)}
-                            </div>
+                        <h2 ref={lastPosts} id="last-posts">Dernières publications</h2>
+                        <div id="cards-container">
+                            {filtered.map(el => <Card postData={el} toggleTag={toggleTag} selectedTags={tags} />)}
+                        </div>
                     </div>
                 )
             }
@@ -93,7 +93,9 @@ export const query = graphql`
                 dateRaw: date
                 slug
                 image {
-                    publicURL
+                    childImageSharp {
+                        gatsbyImageData(placeholder: TRACED_SVG, width: 400)
+                    }
                 }
             }
             excerpt(pruneLength: 600)

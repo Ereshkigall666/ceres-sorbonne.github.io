@@ -40,7 +40,7 @@ const Layout = ({ children, nodes }) => {
         // TODO: ajouter coloration des enfants tags si il y en a
         // si le tag est déjà sélectionné on le déselectionne
         if (tags.indexOf(tag) !== -1) {
-            setTags(tags.filter(el => el != tag))
+            setTags(tags.filter(el => el !== tag))
             // on referme le nav en déselectionnant le dernier tag sélectionné
             if (open && !nav && tags.length === 1) {
                 setOpen(false)

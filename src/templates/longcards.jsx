@@ -56,8 +56,10 @@ export const query = graphql`
             slug
             collection
             image {
-                publicURL
-            }
+                    childImageSharp {
+                        gatsbyImageData(placeholder: TRACED_SVG, width: 400)
+                    }
+                }
             }
             excerpt(pruneLength: 600)
         }

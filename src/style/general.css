@@ -474,8 +474,7 @@ table tr th:last-child {
     background: linear-gradient(0deg, var(--light-background) 0%, var(--light-background) 40%, transparent);
 }
 
-.card>img {
-    background-color: var(--light-background);
+.card>.image-card {
     min-width: calc(100% + 2 * var(--card-padding) + 2 * var(--border-width));
     margin-left: calc(0rem - var(--card-padding) - var(--border-width));
     margin-top: calc(0rem - var(--border-width));
@@ -483,6 +482,15 @@ table tr th:last-child {
     height: 12rem;
     border-bottom: var(--hr);
     border-radius: calc(var(--card-border-radius) - var(--border-width)) calc(var(--card-border-radius) - var(--border-width)) 0 0;
+}
+
+.image-card{
+    object-fit: cover;
+    background-color: white;
+}
+
+.empty{
+    background-color: var(--light-background);
 }
 
 .card>h4 {
@@ -495,6 +503,9 @@ table tr th:last-child {
     margin: 0 0 var(--in-card-margin) 0;
 }
 
+.blog-content > * > img {
+    background-color: white;
+}
 /* Boutons de navigation */
 
 #buttons-container {
