@@ -74,7 +74,7 @@ button:focus-visible {
 
 html {
     background-color: var(--background-color) !important;
-    font-size: calc(13.4px + 0.13vw);
+    font-size: calc(15.8px + 0.05vw);
     scroll-behavior: smooth;
 }
 
@@ -437,7 +437,7 @@ table tr th:last-child {
 
 .card {
     position: relative;
-    height: 25rem;
+    height: 22rem;
     flex: 1 1 15rem;
     max-width: 20rem;
     padding: 0 var(--card-padding) var(--card-padding) var(--card-padding);
@@ -479,7 +479,7 @@ table tr th:last-child {
     margin-left: calc(0rem - var(--card-padding) - var(--border-width));
     margin-top: calc(0rem - var(--border-width));
     object-fit: cover;
-    height: 12rem;
+    height: 11rem;
     border-bottom: var(--hr);
     border-radius: calc(var(--card-border-radius) - var(--border-width)) calc(var(--card-border-radius) - var(--border-width)) 0 0;
 }
