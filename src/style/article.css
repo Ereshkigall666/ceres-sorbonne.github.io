@@ -5,8 +5,13 @@ audio {
 }
 
 #article-container {
-    float: right;
     max-width: var(--art-width);
+    margin-inline: auto;
+    padding: 0rem 2rem;
+}
+
+#toc-container+#article-container {
+    float: right;
     margin-top: 0;
     margin-right: calc(var(--ext-margin) + var(--toc-width) + 2 * var(--toc-padding) + 2rem);
     margin-bottom: 0;
@@ -140,8 +145,9 @@ only screen and (hover: none) and (pointer: coarse) {
         display: none;
     }
 
-    #article-container {
+    #toc-container+#article-container {
         right: auto;
-        margin-inline: max(1rem, 50% - var(--art-width) / 2);
+        margin-inline: 50% - var(--art-width) / 2;
     }
+
 }
