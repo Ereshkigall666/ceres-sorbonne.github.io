@@ -6,8 +6,8 @@ const folders = fs.readdirSync(DIR)
 
 let config = {
   siteMetadata: {
-    title: `Ceres Sorbonne`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `CERES Sorbonne Université`,
+    siteUrl: `https://ceres.sorbonne-universite.fr`,
     authors: [
       { id: `thomas`, name: `Thomas Bottini` },
       { id: `felix`, name: `Félix Alié` },
