@@ -11,6 +11,10 @@ import "../style/accueil.css"
 const Home = ({ data }) => {
     const nodes = data.allMarkdownRemark.nodes
     const lastPosts = React.useRef(null)
+    React.useEffect(() => {
+        document.title = data.site.siteMetadata.title
+    }, [])
+    
     return (
         <Layout nodes={nodes}>
             {/* petite astuce pour passer une fonction qui rend le composant actuel au layout pour que le layout puisse passer les paramètres nécessaires au filtrage*/}
@@ -77,6 +81,11 @@ const HomeHeader = ({ nodes }) => (
 
 export const query = graphql`
   query MyQuery {
+    site {
+        siteMetadata {
+            title
+        }
+    }
     allMarkdownRemark(sort: {fields: fields___date, order: DESC}, filter: {fields: {date: {ne: null}}}, limit: 999) {
         nodes {
             frontmatter {
