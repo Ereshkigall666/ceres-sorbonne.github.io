@@ -128,7 +128,7 @@ img[alt="big"] {
 }
 
 img[alt="small"] {
-    max-width: 70%;
+    max-width: 60%;
     max-height: 60vh;
 }
 

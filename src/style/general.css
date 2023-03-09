@@ -204,6 +204,7 @@ blockquote {
 code {
     font-family: 'IBM Plex Mono', monospace;
     color: var(--code);
+    font-size: 0.85em;
     background: var(--light-background);
     box-shadow: 0.2rem 0 0 var(--light-background), -0.2rem 0 0 var(--light-background);
     padding: 0.2rem 0;
@@ -350,7 +351,7 @@ table {
     border-collapse: collapse;
     border-style: hidden;
     overflow: hidden;
-    font-size: 95%;
+    font-size: 90%;
     table-layout: auto;
     max-width: 100%;
 }
