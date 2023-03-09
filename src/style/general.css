@@ -454,6 +454,7 @@ table tr th:last-child {
 
 .card>h4 {
     text-overflow: ellipsis;
+    font-size: 1.3rem;
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 3;
