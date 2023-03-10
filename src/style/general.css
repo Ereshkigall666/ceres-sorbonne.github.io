@@ -32,6 +32,7 @@
     --bquote: rgb(var(--bquote-num), var(--bquote-num), var(--bquote-num));
     --disabled-color: rgb(var(--disabled-num), var(--disabled-num), var(--disabled-num));
     --hr-color: rgb(var(--hr-num), var(--hr-num), var(--hr-num));
+    --intense-text-color: rgb(var(--text));
     --light-background: rgb(var(--li-bg-num), var(--li-bg-num), var(--li-bg-num));
     --dimmed-background: rgb(var(--di-bg-num), var(--di-bg-num), var(--di-bg-num));
 
@@ -74,7 +75,7 @@ button:focus-visible {
 
 html {
     background-color: var(--background-color) !important;
-    font-size: calc(15.8px + 0.05vw);
+    font-size: calc(18.4px - 0.1vw);
     scroll-behavior: smooth;
 }
 
@@ -273,7 +274,7 @@ a:not([class]):not([id])[href^="../"]:after,
 a:not([class]):not([id])[href^="./"]:after,
 a:not([class]):not([id])[href^="/"]:after {
     font-family: "Inter";
-    content: " ↗";
+    content: " \002197";
 }
 
 a:not([class]):not([id])[href^="../"]:hover,
@@ -327,12 +328,14 @@ a:not([class]):not([id])[href^="/"]:hover {
 /* Encarts */
 
 aside {
-    padding: 0 0.8rem 0 0.8rem;
-    margin: 1.2rem auto 1.2rem auto;
-    width: 90%;
-    background-color: rgba(var(--main), 0.25);
-    border-radius: 0.3rem;
+    color: var(--intense-text-color);
+    padding: 0.2rem 1rem;
+    margin: 1.2rem auto;
+    width: 85%;
+    background-color: rgba(var(--main), 0.2);
+    border-radius: 0.4rem;
     border: var(--border-width) solid rgba(var(--main), 0.5);
+    border-left: 0.5rem solid rgb(var(--main), 0.5);
 }
 
 /* Diviseurs */
@@ -345,13 +348,13 @@ hr {
 /* Tableaux */
 
 table {
-    margin: 1rem auto 1rem auto;
+    overflow: hidden;
+    margin: 1rem auto;
     border-radius: var(--card-border-radius);
     box-shadow: 0 0 0 0.1rem var(--hr-color);
     border-collapse: collapse;
     border-style: hidden;
-    overflow: hidden;
-    font-size: 90%;
+    font-size: 0.9em;
     table-layout: auto;
     max-width: 100%;
 }
@@ -486,12 +489,12 @@ table tr th:last-child {
     border-radius: calc(var(--card-border-radius) - var(--border-width)) calc(var(--card-border-radius) - var(--border-width)) 0 0;
 }
 
-.image-card{
+.image-card {
     object-fit: cover;
     background-color: white;
 }
 
-.empty{
+.empty {
     background-color: var(--light-background);
 }
 
@@ -505,9 +508,10 @@ table tr th:last-child {
     margin: 0 0 var(--in-card-margin) 0;
 }
 
-.blog-content > * > img {
+.blog-content>*>img {
     background-color: white;
 }
+
 /* Boutons de navigation */
 
 #buttons-container {

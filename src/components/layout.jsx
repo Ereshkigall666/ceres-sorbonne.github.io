@@ -149,7 +149,7 @@ const LeftNav = ({ allTags, open, setOpen, selectedTags, toggleTag, search, setS
                     <p style={{ visibility: open ? 'visible' : 'hidden' }}>
                         <strong>Recherche de contenus par concepts</strong>
                     </p>
-                    <a className="discrete-button" onClick={() => setOpen(!open)}> {open ? '←' : '→'}</a>
+                    <a className="discrete-button" onClick={() => setOpen(!open)}> {open ? '\u2190' : '\u2192'}</a>
                 </div>
                 <div id="tags-panel-text" style={{ visibility: open ? 'visible' : 'hidden' }}>
                     <input type="text" placeholder="Recherche dans le texte" value={search} onChange={(e) => setSearch(e.target.value)} />

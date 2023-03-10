@@ -32,13 +32,17 @@
 }
 
 
-.long-card>.image-card {
+.image-card {
     flex: 1 1 10rem;
     max-width: 15rem;
     margin: calc(0rem - var(--card-padding)) 0 0 calc(0rem - var(--card-padding));
     height: calc(100% + 2 * var(--card-padding));
-    border-radius: calc(var(--card-border-radius) - var(--border-width)) 0 0 calc(var(--card-border-radius) - var(--border-width));
+    border-radius: calc(var(--card-border-radius) - var(--border-width)) 0rem 0rem calc(var(--card-border-radius) - var(--border-width));
     z-index: 1;
+}
+
+.image-card img {
+    border-radius: 0rem !important;
 }
 
 .description {

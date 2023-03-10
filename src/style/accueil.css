@@ -80,13 +80,13 @@ img.landing-block {
 
 .react-calendar__navigation__prev-button::after {
     font-size: 1rem;
-    content: "←";
+    content: "\002190";
     color: var(--text-color) !important;
 }
 
 .react-calendar__navigation__next-button::after {
     font-size: 1rem;
-    content: "→";
+    content: "\002192";
     color: var(--text-color) !important;
 }
 
