@@ -38,7 +38,7 @@
 
     /* Diviseurs et contours */
     --border-width: 0.13rem;
-    --small-border-width: calc(var(--border-width) / 1.3);
+    --small-border-width: calc(var(--border-width) / 1.4);
     --half-border-width: calc(var(--border-width) / 2);
     --hr: var(--border-width) solid var(--hr-color);
     --hr-main: var(--border-width) solid rgba(var(--main), 0.8);
@@ -83,7 +83,7 @@ html {
 
     /* Taille de typo pour téléphone */
     html {
-        font-size: 3.5vw;
+        font-size: 4vw;
     }
 }
 
@@ -227,7 +227,7 @@ pre>code {
 /* Emphase */
 
 strong {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 em {
@@ -292,13 +292,14 @@ a:not([class]):not([id])[href^="/"]:hover {
     cursor: pointer;
     display: block;
     width: fit-content;
+    height: fit-content;
     border-radius: 100rem;
     margin: 0;
     transition: 0.05s;
     text-decoration: none !important;
     text-align: center;
     color: var(--main-color);
-    font-weight: 500;
+    font-weight: 400;
     border: var(--small-border-width) solid rgba(var(--main), 0.8);
     background: var(--background-color);
 }
@@ -317,12 +318,13 @@ a:not([class]):not([id])[href^="/"]:hover {
 }
 
 .tag {
-    padding: 0.25rem 0.5rem 0.4rem 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem 0.3rem 0.5rem;
 }
 
 .small-tag {
-    font-size: 0.85rem;
-    padding: 0.25rem 0.5rem 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
 }
 
 /* Encarts */
@@ -428,8 +430,7 @@ table tr th:last-child {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: var(--in-card-margin) 0 var(--in-card-margin) 0;
-    min-height: calc(0.85rem + (2 * 0.4rem) + (2 * var(--border-width)));
-    max-height: 4.5rem;
+    height: calc(0.8rem + (2 * 0.4rem) + (2 * var(--border-width)));
     overflow: hidden;
 }
 
@@ -443,7 +444,7 @@ table tr th:last-child {
     position: relative;
     height: 22rem;
     flex: 1 1 15rem;
-    max-width: 20rem;
+    max-width: 22rem;
     padding: 0 var(--card-padding) var(--card-padding) var(--card-padding);
     border: var(--hr);
     border-radius: var(--card-border-radius);

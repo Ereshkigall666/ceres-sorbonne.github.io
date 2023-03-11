@@ -156,5 +156,5 @@ abbr {
 #last-posts {
     display: block;
     max-width: var(--max-cards-width);
-    margin: 10rem auto 1.5rem auto;
+    margin: 10rem max(calc((100vw - var(--max-cards-width)) / 2 - 2rem), 2rem) 1.5rem max(calc((100vw - var(--max-cards-width)) / 2 - 2rem), 2rem);
 }
