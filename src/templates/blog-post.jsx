@@ -30,7 +30,7 @@ const BlogPost = ({ data, children }) => {
                                 </audio>
                             )
                         }
-                        <section className="blog-content" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+                        <section dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
                     </article>
                 </div>
             </main>

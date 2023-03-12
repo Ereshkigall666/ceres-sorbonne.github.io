@@ -11,7 +11,7 @@ export const LongCard = ({ postData, toggleTag, selectedTags }) => {
     return (
         <div className="long-card">
             <Link className="card-link" to={`/${collection}/` + slug} />
-            {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title}/>) : (<img className="image-card empty"/>)}
+            {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title}/>) : (<img className="image-card"/>)}
             <div className="description">
                 <h4>{title}</h4>
                 {tags && (<div class="small-tags-container">

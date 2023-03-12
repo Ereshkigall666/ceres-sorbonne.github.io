@@ -1,7 +1,7 @@
 import { graphql, Link } from "gatsby"
 import * as React from 'react'
 import Layout from '../components/layout'
-import Planet from '../images/5.png'
+import Planet from '../images/ceres-dither-1000-serpentine.png'
 import { Card } from "../components/card"
 import { filterNodes, isDateOnCallendar } from "../helpers"
 import Calendar from 'react-calendar'
@@ -14,7 +14,7 @@ const Home = ({ data }) => {
     React.useEffect(() => {
         document.title = data.site.siteMetadata.title
     }, [])
-    
+
     return (
         <Layout nodes={nodes}>
             {/* petite astuce pour passer une fonction qui rend le composant actuel au layout pour que le layout puisse passer les paramètres nécessaires au filtrage*/}
@@ -46,7 +46,7 @@ const HomeHeader = ({ nodes }) => (
             <div className="landing-block">
                 <h2>Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales</h2>
                 <p>
-                    Le Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales (CERES) est une unité de service de la Faculté des Lettres de Sorbonne Université, créée en février 2021, dont la mission principale est d’offrir un accompagnement aux chercheurs et chercheuses, doctorants et doctorantes en SHS souhaitant recourir à des méthodes numériques et à des outils informatiques pour développer leurs recherches.
+                    Le Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales est une unité de service de la <a href="https://lettres.sorbonne-universite.fr/">Faculté des Lettres de Sorbonne Université</a>, créée en février 2021, dont la mission principale est d’offrir un accompagnement aux chercheurs et chercheuses, doctorants et doctorantes en SHS souhaitant recourir à des méthodes numériques et à des outils informatiques pour développer leurs recherches.
                 </p>
                 <p>
                     Les actions de CERES sont organisées autour de trois axes principaux :
@@ -57,7 +57,7 @@ const HomeHeader = ({ nodes }) => (
                     </ul>
                 </p>
                 <p>
-                    CERES offre un accompagnement technique et méthodologique dans la prise en main d’outils informatiques disponibles et œuvre au déploiement d’outils informatiques utiles à la communauté des chercheurs et chercheuses de la Faculté des Lettres. L’unité de service conduit par ailleurs une réflexion sur le statut épistémologique de ces outils et méthodes dans la recherche en SHS, mettant en avant le caractère central de l’activité interprétative du chercheur ou de la chercheuse face aux outils informatiques. Plus largement, il s’agit pour le CERES de contribuer à l’émergence de nouvelles pratiques de recherche en milieu numérique, au service des approches spécifiques des SHS. Le CERES est fort d’une <a href="/membres">équipe interdisciplinaire</a>.
+                    CERES offre un <a href="/ateliers">accompagnement technique et méthodologique</a> dans la prise en main d’outils informatiques disponibles et œuvre au déploiement d’<a href="/projets">outils informatiques</a> utiles à la communauté des chercheurs et chercheuses de la Faculté des Lettres. L’unité de service conduit par ailleurs une réflexion sur le statut épistémologique de ces outils et méthodes dans la recherche en SHS, mettant en avant le caractère central de l’activité interprétative du chercheur ou de la chercheuse face aux outils informatiques. Plus largement, il s’agit pour le CERES de contribuer à l’émergence de nouvelles pratiques de recherche en milieu numérique, au service des approches spécifiques des SHS. Le CERES est fort d’une <a href="/membres">équipe interdisciplinaire</a>.
                 </p>
             </div>
             <div className="landing-block">

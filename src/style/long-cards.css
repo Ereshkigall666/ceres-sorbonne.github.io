@@ -51,6 +51,7 @@
 
 .description>h4 {
     flex: 0 0 content;
+    font-size: var(--card-title-font-size);
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box !important;

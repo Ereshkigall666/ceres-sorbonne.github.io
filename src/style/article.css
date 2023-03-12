@@ -20,7 +20,7 @@ audio {
 
 #article-container>header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 #article-meta {
@@ -101,7 +101,7 @@ audio {
     align-items: center;
     align-content: center;
     width: 90%;
-    margin: 2rem auto;
+    margin: 2rem auto 0rem auto;
 }
 
 #tags-container:before {

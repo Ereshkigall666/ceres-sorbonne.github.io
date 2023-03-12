@@ -12,7 +12,7 @@ export const Card = ({ postData, toggleTag, selectedTags }) => {
     return (
         <div className="card">
             <Link className="card-link" to={`/${collection}/` + slug} />
-            {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title}/>) : (<img className="image-card empty"/>)}
+            {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title}/>) : (<img className="image-card"/>)}
             <h4>{title}</h4>
             {tags && (<div className="small-tags-container">
                 {tags ? tags.map(t => <Tag tagName={t} selectedTags={selectedTags} toggleTag={toggleTag} />) : ""}

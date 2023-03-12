@@ -63,14 +63,26 @@
     --art-width: 43rem;
 
     /* Mesures de cartes */
-    --in-card-margin: 0.6rem;
+    --in-card-margin: 0.5rem;
     --card-padding: 1rem;
     --max-cards-width: 80rem;
+    --card-title-font-size: 1.35rem;
 }
+
+/* Sélection et focus */
 
 ::selection {
     color: var(--background-color);
     background: rgba(var(--main), 0.8);
+}
+
+.button,
+.discrete-button,
+.tag,
+.small-tag {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 a:focus-visible,
@@ -432,7 +444,7 @@ table tr th:last-child {
 }
 
 .text-sample {
-    font-size: 90%;
+    font-size: 85%;
     margin: 0;
 }
 
@@ -469,11 +481,12 @@ table tr th:last-child {
 
 .card>h4 {
     text-overflow: ellipsis;
-    font-size: 1.3rem;
+    font-size: var(--card-title-font-size);
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    margin: var(--in-card-margin) 0rem;
 }
 
 .text-sample:before {
@@ -503,10 +516,6 @@ table tr th:last-child {
 
 .image-card {
     object-fit: cover;
-    background-color: white;
-}
-
-.empty {
     background-color: var(--light-background);
 }
 
@@ -515,13 +524,9 @@ table tr th:last-child {
 }
 
 .date {
-    font-size: 90%;
+    font-size: 85%;
     color: var(--disabled-color);
     margin: 0 0 var(--in-card-margin) 0;
-}
-
-.blog-content>*>img {
-    background-color: white;
 }
 
 /* Boutons de navigation */
@@ -556,8 +561,9 @@ table tr th:last-child {
 }
 
 .button {
-    padding: 0.4rem 0.7rem 0.4rem 0.7rem;
-    border: var(--border-width) solid rgba(var(--main), 0.8);
+    font-size: 0.95rem;
+    padding: 0.25rem 0.55rem;
+    border: var(--small-border-width) solid rgba(var(--main), 0.8);
 }
 
 .button.active {
