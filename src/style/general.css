@@ -240,12 +240,15 @@ pre {
     background: var(--light-background);
     border-radius: 0.25rem;
     padding: 1rem;
+    overflow-x: scroll;
+    white-space: pre-wrap;
 }
 
 pre>code {
     background: none;
     box-shadow: none;
     color: var(--code);
+    width: 50rem;
 }
 
 /* Emphase */
@@ -388,15 +391,18 @@ table td,
 table th {
     border: var(--hr) !important;
     padding: calc(0.3rem + 0.4vw);
-}
-
-td {
     word-wrap: break-word;
-    word-break: break-word;
     hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
-th {
+table td {
+    word-break: break-word;
+}
+
+table th {
     font-weight: 500;
     background-color: var(--light-background);
 }
