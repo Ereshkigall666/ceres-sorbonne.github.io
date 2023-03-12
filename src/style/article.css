@@ -7,13 +7,13 @@ audio {
 #article-container {
     max-width: var(--art-width);
     margin-inline: auto;
-    padding: 0rem 2rem;
+    padding: 0rem var(--min-margin);
 }
 
 #toc-container+#article-container {
     float: right;
     margin-top: 0;
-    margin-right: calc(var(--ext-margin) + var(--toc-width) + 2 * var(--toc-padding) + 2rem);
+    margin-right: calc(var(--ext-margin) + var(--toc-width) + 2 * var(--toc-padding) + var(--min-margin));
     margin-bottom: 0;
     margin-left: var(--ext-margin);
 }
@@ -37,8 +37,8 @@ audio {
     font-size: 0.9rem;
     background-color: var(--background-color);
     border: var(--hr);
-    border-radius: 0.32rem;
-    padding: 0 var(--toc-padding) 0 var(--toc-padding);
+    border-radius: var(--small-border-radius);
+    padding: 0 var(--toc-padding);
     list-style: none;
     color: var(--disabled-color);
     z-index: 1;
@@ -101,7 +101,7 @@ audio {
     align-items: center;
     align-content: center;
     width: 90%;
-    margin: 2rem auto 2rem auto;
+    margin: 2rem auto;
 }
 
 #tags-container:before {

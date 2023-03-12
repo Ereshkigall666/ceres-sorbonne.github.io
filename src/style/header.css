@@ -2,12 +2,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 2.3rem;
     align-items: center;
     align-content: center;
-    padding: 0.6rem calc(2% + 0.6rem) 0.8rem calc(2% + 0.6rem);
+    padding: 2.1rem var(--min-margin) 0.8rem var(--min-margin);
     background-color: var(--background-color);
     z-index: 1;
+}
+
+#header * {
+    margin-top: -1.5rem;
 }
 
 #header a {
@@ -24,13 +28,12 @@
 }
 
 #header-logo {
-    margin: 0 3% 0 0;
+    margin-right: 3%;
     font-weight: 400;
     font-size: 2rem;
 }
 
 .header-link {
-    margin: 0 1rem;
     font-weight: 500;
     font-size: 105%;
 }
@@ -45,7 +48,7 @@
     margin: 0;
 }
 
-svg.color-mode {
+#header svg.color-mode {
     margin: 0.2rem 0rem 0rem 0rem;
     width: 1.3rem;
     height: 1.3rem;
@@ -56,4 +59,25 @@ svg.color-mode {
 #header .discrete-button:focus {
     outline: none;
     border: none !important;
+}
+
+#header .button {
+    overflow: hidden;
+}
+
+#header .button:after {
+    transition: 0.1s ease-in-out;
+    transition-delay: 1s;
+    color: transparent;
+    content: " : lettres-ceres@sorbonne-universite.fr";
+    visibility: hidden;
+    display: inline-block;
+    width: 0rem;
+}
+
+#header .button:hover:after {
+    transition-delay: 0s;
+    color: inherit;
+    width: 18rem;
+    visibility: visible;
 }

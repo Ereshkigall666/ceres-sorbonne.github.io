@@ -23,7 +23,7 @@
     /* Variantes des couleurs neutres
         Plus le coefficient à la fin est bas, plus la couleur est distincte du fond.
         Les formules sont complexes pour ne pas avoir des problèmes liés à la transparence */
-    --bquote-num: calc(var(--text-num) + (var(--bg-num) - var(--text-num)) * 0.18);
+    --bquote-num: calc(var(--text-num) + (var(--bg-num) - var(--text-num)) * 0.35);
     --disabled-num: calc(var(--text-num) + (var(--bg-num) - var(--text-num)) * 0.47);
     --hr-num: calc(var(--text-num) + (var(--bg-num) - var(--text-num)) * 0.8);
     --li-bg-num: calc(var(--text-num) + (var(--bg-num) - var(--text-num)) * 0.93);
@@ -44,20 +44,28 @@
     --hr-main: var(--border-width) solid rgba(var(--main), 0.8);
     --half-hr: var(--half-border-width) solid var(--hr-color);
 
+    /* Tableaux */
+    --cal-font-size: calc(0.8rem + 0.15vw);
+    --table-font-size: calc(0.72rem + 0.18vw);
+
     /* Code */
     --code: var(--main-color);
 
-    /* Mesures de cartes */
-    --in-card-margin: 0.6rem;
-    --card-padding: 1rem;
-    --card-border-radius: 0.4rem;
-    --max-cards-width: 80rem;
+    /* Mesures générales */
+    --min-margin: calc(0.5rem + 1.5vw);
+    --small-border-radius: 0.3rem;
+    --medium-border-radius: 0.4rem;
 
     /* Mesures des articles */
     --toc-width: calc(20rem);
     --toc-padding: 1rem;
     --ext-margin: max(1rem, 40vw - 25rem);
     --art-width: 43rem;
+
+    /* Mesures de cartes */
+    --in-card-margin: 0.6rem;
+    --card-padding: 1rem;
+    --max-cards-width: 80rem;
 }
 
 ::selection {
@@ -75,7 +83,7 @@ button:focus-visible {
 
 html {
     background-color: var(--background-color) !important;
-    font-size: calc(18.4px - 0.1vw);
+    font-size: 16.8px;
     scroll-behavior: smooth;
 }
 
@@ -185,19 +193,23 @@ blockquote::before {
     display: block;
     content: '“';
     font-size: 6rem;
+    font-family: "IBM Plex Serif";
     left: -3.5rem;
-    -webkit-text-stroke: 0.1rem var(--bquote);
+    top: -2rem;
+    -webkit-text-stroke: 0.1rem var(--hr-color);
     color: var(--background-color);
     height: 0;
     width: 0;
 }
 
 blockquote {
-    padding-left: 1.5rem;
+    margin: 1rem 2rem 1rem 4rem;
+    padding-left: 1rem;
     color: var(--bquote);
-    margin: 0 0 1rem 2rem;
-    font-weight: 300;
-    font-size: 110%;
+}
+
+blockquote p {
+    margin: 0rem;
 }
 
 /* Code */
@@ -241,12 +253,11 @@ a:not([href^="../"]),
 a:not([href^="./"]),
 a:not([href^="/"]) {
     color: var(--main-color);
-    transition: 0.1s;
+    transition: 0.1s ease-in-out;
     text-decoration: underline;
     text-underline-offset: 0.25em;
     text-decoration-thickness: 0.1em;
     text-decoration-color: rgba(var(--main), 0.4);
-    transition: 0.1s;
 }
 
 
@@ -267,7 +278,7 @@ a:not([class]):not([id])[href^="/"] {
     background: rgba(var(--main), 0.1);
     box-shadow: 0.2rem 0 0 rgba(var(--main), 0.1), -0.2rem 0 0 rgba(var(--main), 0.1);
     border-radius: 0.2rem;
-    transition: 0.1s;
+    transition: 0.1s ease-in-out;
 }
 
 a:not([class]):not([id])[href^="../"]:after,
@@ -295,13 +306,13 @@ a:not([class]):not([id])[href^="/"]:hover {
     height: fit-content;
     border-radius: 100rem;
     margin: 0;
-    transition: 0.05s;
+    transition: 0.1s ease-in-out;
     text-decoration: none !important;
     text-align: center;
     color: var(--main-color);
     font-weight: 400;
     border: var(--small-border-width) solid rgba(var(--main), 0.8);
-    background: var(--background-color);
+    background-color: var(--background-color);
 }
 
 .tag:hover,
@@ -335,7 +346,7 @@ aside {
     margin: 1.2rem auto;
     width: 85%;
     background-color: rgba(var(--main), 0.2);
-    border-radius: 0.4rem;
+    border-radius: var(--medium-border-radius);
     border: var(--border-width) solid rgba(var(--main), 0.5);
     border-left: 0.5rem solid rgb(var(--main), 0.5);
 }
@@ -352,19 +363,19 @@ hr {
 table {
     overflow: hidden;
     margin: 1rem auto;
-    border-radius: var(--card-border-radius);
-    box-shadow: 0 0 0 0.1rem var(--hr-color);
+    border-radius: var(--small-border-radius);
+    box-shadow: 0 0 0 var(--small-border-width) var(--hr-color);
     border-collapse: collapse;
     border-style: hidden;
-    font-size: 0.9em;
+    font-size: var(--table-font-size);
     table-layout: auto;
-    max-width: 100%;
+    width: 100%;
 }
 
 table td,
 table th {
     border: var(--hr) !important;
-    padding: 0.7rem;
+    padding: calc(0.3rem + 0.4vw);
 }
 
 td {
@@ -401,7 +412,7 @@ table tr th:last-child {
 #cards-container {
     max-width: var(--max-cards-width) !important;
     margin: 0 auto 3rem auto;
-    padding: 0 2rem;
+    padding: 0 var(--min-margin);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -417,7 +428,7 @@ table tr th:last-child {
     z-index: 2;
     top: calc(0rem - var(--border-width));
     left: calc(0rem - var(--border-width));
-    border-radius: var(--card-border-radius);
+    border-radius: var(--medium-border-radius);
 }
 
 .text-sample {
@@ -447,8 +458,8 @@ table tr th:last-child {
     max-width: 22rem;
     padding: 0 var(--card-padding) var(--card-padding) var(--card-padding);
     border: var(--hr);
-    border-radius: var(--card-border-radius);
-    transition: 0.1s;
+    border-radius: var(--medium-border-radius);
+    transition: 0.1s ease-in-out;
     overflow: hidden;
 }
 
@@ -470,7 +481,7 @@ table tr th:last-child {
     width: 100%;
     height: 2rem;
     position: absolute;
-    border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+    border-radius: 0 0 var(--medium-border-radius) var(--medium-border-radius);
     right: 0rem;
     bottom: 0rem;
     background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color) 40%, transparent);
@@ -487,7 +498,7 @@ table tr th:last-child {
     object-fit: cover;
     height: 11rem;
     border-bottom: var(--hr);
-    border-radius: calc(var(--card-border-radius) - var(--border-width)) calc(var(--card-border-radius) - var(--border-width)) 0 0;
+    border-radius: calc(var(--medium-border-radius) - var(--border-width)) calc(var(--medium-border-radius) - var(--border-width)) 0 0;
 }
 
 .image-card {
@@ -529,9 +540,9 @@ table tr th:last-child {
 .discrete-button {
     display: block;
     text-align: center;
-    border-radius: 0.4rem;
+    border-radius: var(--medium-border-radius);
     margin: 0;
-    transition: 0.1s;
+    transition: 0.1s ease-in-out;
     text-decoration: none !important;
     color: var(--main-color);
     font-weight: 500;

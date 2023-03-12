@@ -27,7 +27,7 @@ h1#landing-title {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 2rem 0 2rem;
+    padding: 0 var(--min-margin);
     gap: 2rem;
 }
 
@@ -66,7 +66,7 @@ img.landing-block {
     padding: 0.3rem 0.7rem;
     margin: 0rem;
     border: none;
-    font-size: 0.95rem;
+    font-size: var(--cal-font-size);
 }
 
 .react-calendar__navigation__arrow {
@@ -79,13 +79,13 @@ img.landing-block {
 }
 
 .react-calendar__navigation__prev-button::after {
-    font-size: 1rem;
+    font-size: var(--cal-font-size);
     content: "\002190";
     color: var(--text-color) !important;
 }
 
 .react-calendar__navigation__next-button::after {
-    font-size: 1rem;
+    font-size: var(--cal-font-size);
     content: "\002192";
     color: var(--text-color) !important;
 }
@@ -93,7 +93,7 @@ img.landing-block {
 .react-calendar__navigation__label {
     background: var(--dimmed-background);
     color: var(--text-color);
-    width: 15rem;
+    width: 12rem;
 }
 
 .react-calendar__navigation__prev2-button,
@@ -117,7 +117,7 @@ img.landing-block {
     color: var(--text-color);
     border: var(--half-hr);
     padding: 0.3rem 0.4rem;
-    font-size: 0.95rem;
+    font-size: var(--cal-font-size);
     text-align: center;
 }
 
@@ -156,5 +156,5 @@ abbr {
 #last-posts {
     display: block;
     max-width: var(--max-cards-width);
-    margin: 10rem max(calc((100vw - var(--max-cards-width)) / 2 - 2rem), 2rem) 1.5rem max(calc((100vw - var(--max-cards-width)) / 2 - 2rem), 2rem);
+    margin: 10rem max(calc((100vw - var(--max-cards-width)) / 2 - 2rem), var(--min-margin)) 1.5rem max(calc((100vw - var(--max-cards-width)) / 2 - 2rem), var(--min-margin));
 }
