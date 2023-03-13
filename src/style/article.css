@@ -146,6 +146,7 @@ only screen and (hover: none) and (pointer: coarse) {
     }
 
     #toc-container+#article-container {
+        position: static;
         right: auto;
         margin-inline: max(calc(50% - var(--art-width) / 2), var(--min-margin));
     }
