@@ -139,6 +139,79 @@ img[alt="small"] {
 
 /* Breakpoints */
 
+@media print {
+    :root {
+        --main: 0, 93, 255 !important;
+        --text-num: 30 !important;
+        --bg-num: 255 !important;
+    }
+
+    html {
+        font-size: 12px;
+    }
+
+    #header,
+    footer,
+    #tags-panel-container,
+    #toc-container,
+    #header-div-h {
+        display: none;
+    }
+
+    #article-container {
+        max-width: calc(100% - 2* var(--border-width));
+        width: calc(100% - 2* var(--border-width));
+        float: none !important;
+        margin: 0rem !important;
+        padding: 0rem !important;
+    }
+
+    aside,
+    img {
+        display: inline-block;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    img {
+        border: var(--small-border-width) solid var(--hr-color);
+        max-width: 80%;
+        max-height: 35vh;
+    }
+
+    img[alt="big"] {
+        max-width: 100%;
+        max-height: 40vh;
+    }
+
+    img[alt="small"] {
+        max-width: 60%;
+        max-height: 30vh;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        width: 100%;
+        display: inline-block;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    table thead {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+}
+
 @media (max-width: 60rem),
 only screen and (hover: none) and (pointer: coarse) {
     #toc-container {
