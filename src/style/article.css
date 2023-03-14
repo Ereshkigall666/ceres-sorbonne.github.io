@@ -230,8 +230,7 @@ img[alt="small"] {
 @media (max-width: 60rem),
 only screen and (hover: none) and (pointer: coarse) {
 
-    #toc-container,
-    button.print {
+    #toc-container {
         display: none;
     }
 
