@@ -1,8 +1,4 @@
 /* Article */
-audio {
-    width: 100%;
-    margin: 0rem 0rem 0rem 1rem;
-}
 
 #article-container {
     max-width: var(--art-width);
@@ -25,6 +21,17 @@ audio {
 
 #article-meta {
     color: var(--disabled-color);
+}
+
+audio {
+    width: 100%;
+    margin: 0rem 0rem 0rem var(--meta-margin);
+}
+
+/* Bouton d'impression */
+
+button.print {
+    margin: var(--meta-margin) auto 0rem auto;
 }
 
 /* Table des matières */
@@ -101,7 +108,7 @@ audio {
     align-items: center;
     align-content: center;
     width: 90%;
-    margin: 2rem auto 0rem auto;
+    margin: var(--meta-margin) auto 0rem auto;
 }
 
 #tags-container:before {
@@ -137,7 +144,7 @@ img[alt="small"] {
     max-height: 60vh;
 }
 
-/* Breakpoints */
+/* Breakpoints et print */
 
 @media print {
     :root {
@@ -154,19 +161,20 @@ img[alt="small"] {
     footer,
     #tags-panel-container,
     #toc-container,
-    #header-div-h {
+    #header-div-h,
+    .button {
         display: none;
     }
 
     #article-container {
-        max-width: calc(100% - 2* var(--border-width));
-        width: calc(100% - 2* var(--border-width));
+        max-width: calc(100% - 4 * var(--border-width));
+        width: calc(100% - 4 * var(--border-width));
         float: none !important;
         margin: 0rem !important;
         padding: 0rem !important;
     }
 
-    aside,
+    aside:not(+section),
     img {
         display: inline-block;
         break-inside: avoid;
@@ -202,11 +210,18 @@ img[alt="small"] {
         display: inline-block;
         break-inside: avoid;
         page-break-inside: avoid;
+        /* Propriétés pas encore supportées sur Firefox */
         break-after: avoid;
         page-break-after: avoid;
     }
 
+    a {
+        text-decoration-color: rgb(var(--main), 0.8) !important;
+        text-decoration-thickness: 0.05rem !important;
+    }
+
     table thead {
+        /* Propriétés pas encore supportées sur Firefox */
         break-after: avoid;
         page-break-after: avoid;
     }
@@ -214,7 +229,9 @@ img[alt="small"] {
 
 @media (max-width: 60rem),
 only screen and (hover: none) and (pointer: coarse) {
-    #toc-container {
+
+    #toc-container,
+    button.print {
         display: none;
     }
 

@@ -12,11 +12,13 @@ const BlogPost = ({ data, children }) => {
             <main>
                 {data.markdownRemark.tableOfContents && (<div id="toc-container">
                     <nav dangerouslySetInnerHTML={{ __html: data.markdownRemark.tableOfContents }} />
-                </div>)}
+                </div>)
+                }
                 <div id="article-container">
                     <header>
                         <h1>{title}</h1>
                         {author && date && (<span id="article-meta">Un article écrit par {authorName} le {date}</span>)}
+                        <button className="button print" onClick={() => { window.print(); }}>&darr; Enregistrer au format pdf</button>
                         {tags && (<div id="tags-container">
                             {tags ? tags.map((el, i) => <a className="tag" key={i}>{el}</a>) : ''}
                         </div>)}

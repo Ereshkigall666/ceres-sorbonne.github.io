@@ -61,6 +61,7 @@
     --toc-padding: 1rem;
     --ext-margin: max(1rem, 40vw - 25rem);
     --art-width: 43rem;
+    --meta-margin: 1.2rem;
 
     /* Mesures de cartes */
     --in-card-margin: 0.5rem;

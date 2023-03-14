@@ -61,23 +61,24 @@
     border: none !important;
 }
 
-.contact {
+button.contact {
     overflow: hidden;
 }
 
-.contact:after {
+button.contact:after {
     transition: 0.1s ease-in-out;
     transition-delay: 0.7s;
     color: transparent;
     content: " : lettres-ceres@sorbonne-universite.fr";
     visibility: hidden;
+    white-space: nowrap;
     display: inline-block;
     width: 0rem;
 }
 
-.contact:hover:after {
+button.contact:hover:after {
     transition-delay: 0s;
     color: inherit;
-    width: 17rem;
+    width: 17.5rem;
     visibility: visible;
 }
