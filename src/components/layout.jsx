@@ -12,6 +12,7 @@ const Layout = ({ children, nodes }) => {
         query GetPages{
             site {
                 siteMetadata {
+                    title
                     pages
                 }
             }
@@ -24,11 +25,28 @@ const Layout = ({ children, nodes }) => {
             }
         }
     `)
+
+    React.useEffect(() => {
+        document.title = data.site.siteMetadata.title
+    }, [])
+
     const pages = data.site.siteMetadata.pages.map(page => {
-        const name = page.split('_')[1]
-        return { name: name[0].toUpperCase() + name.slice(1), link: `/${name}/` }
+        const [group, _, name] = page.split('_')
+        return { name: name[0].toUpperCase() + name.slice(1), link: `/${name}/`, group}
     })
-    const menu = [{ name: 'Accueil', link: '/' }, { name: '|' }, ...pages]
+    // create menu
+    const menu = [{ name: 'Accueil', link: '/' }]
+    const orderedPages = [...pages].sort((el1, el2) => el1.group > el2.group )
+    let startPage = 0
+    orderedPages.forEach(page => {
+        if(page.group != startPage){
+            menu.push({ name: '|' })
+            startPage = page.group
+        }
+        menu.push(page)
+    })
+    console.log(menu)
+
     const nodesToUse = nodes ? nodes : data.allMarkdownRemark.nodes
     const allTags = new Set(nodesToUse.map(el => el.frontmatter.tags).filter(el => el !== null).flat().sort())
     // TODO: ajouter la requête graphql qui récupèrera le thésaurus

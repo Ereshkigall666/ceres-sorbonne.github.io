@@ -47,7 +47,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const pagesToCreate = result.data.site.siteMetadata.pages
 
   pagesToCreate.forEach(page => {
-    const [template, pageName] = page.split('_')
+    const [_, template, pageName] = page.split('_')
+
     createPage({
       path: `/${pageName}/`,
       component: path.resolve(`./src/templates/${template}.jsx`),
@@ -136,12 +137,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: "image",
       value: images[0] ?? null
     })
-
-    // createNodeField({
-    //   node: node,
-    //   name: "sound",
-    //   value: sounds[0] ?? null
-    // })
   }
 }
 

@@ -65,7 +65,7 @@ let config = {
 
 folders.forEach(folder => {
   if(!folder.startsWith('_') && fs.statSync(path.join(DIR, folder)).isDirectory() && folder !== '.git' ){
-    config.plugins.push({resolve: 'gatsby-source-filesystem', options: {name: folder.split('_')[1], path: path.join(DIR, folder)}})
+    config.plugins.push({resolve: 'gatsby-source-filesystem', options: {name: folder.split('_')[2], path: path.join(DIR, folder)}})
     config.siteMetadata.pages.push(folder)
   }
 })

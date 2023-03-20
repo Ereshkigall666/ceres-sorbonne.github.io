@@ -11,9 +11,6 @@ import "../style/accueil.css"
 const Home = ({ data }) => {
     const nodes = data.allMarkdownRemark.nodes
     const lastPosts = React.useRef(null)
-    React.useEffect(() => {
-        document.title = data.site.siteMetadata.title
-    }, [])
 
     return (
         <Layout nodes={nodes}>
