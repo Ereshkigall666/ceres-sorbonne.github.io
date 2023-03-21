@@ -68,6 +68,8 @@
     --card-padding: 1rem;
     --max-cards-width: 80rem;
     --card-title-font-size: 1.35rem;
+
+    --transition: 0.1s ease-in-out;
 }
 
 /* Sélection et focus */
@@ -269,7 +271,7 @@ a:not([href^="../"]),
 a:not([href^="./"]),
 a:not([href^="/"]) {
     color: var(--main-color);
-    transition: 0.1s ease-in-out;
+    transition: var(--transition);
     text-decoration: underline;
     text-underline-offset: 0.25em;
     text-decoration-thickness: 0.1em;
@@ -294,7 +296,7 @@ a:not([class]):not([id])[href^="/"] {
     background: rgba(var(--main), 0.1);
     box-shadow: 0.2rem 0 0 rgba(var(--main), 0.1), -0.2rem 0 0 rgba(var(--main), 0.1);
     border-radius: 0.2rem;
-    transition: 0.1s ease-in-out;
+    transition: var(--transition);
 }
 
 a:not([class]):not([id])[href^="../"]:after,
@@ -322,7 +324,7 @@ a:not([class]):not([id])[href^="/"]:hover {
     height: fit-content;
     border-radius: 100rem;
     margin: 0;
-    transition: 0.1s ease-in-out;
+    transition: var(--transition);
     text-decoration: none !important;
     text-align: center;
     color: var(--main-color);
@@ -450,8 +452,19 @@ table tr th:last-child {
     border-radius: var(--medium-border-radius);
 }
 
+.card>h4 {
+    text-overflow: ellipsis;
+    font-size: var(--card-title-font-size);
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: var(--in-card-margin) 0rem;
+    line-height: 125%;
+}
+
 .text-sample {
-    font-size: 85%;
+    font-size: 0.85rem;
     margin: 0;
 }
 
@@ -468,72 +481,25 @@ table tr th:last-child {
     z-index: 2;
 }
 
-/* Petites cartes */
-
-.card {
-    position: relative;
-    height: 22rem;
-    flex: 1 1 15rem;
-    max-width: 22rem;
-    padding: 0 var(--card-padding) var(--card-padding) var(--card-padding);
-    border: var(--hr);
-    border-radius: var(--medium-border-radius);
-    transition: 0.1s ease-in-out;
-    overflow: hidden;
-}
-
-.card:hover {
-    background-color: var(--light-background);
-}
-
-.card>h4 {
-    text-overflow: ellipsis;
-    font-size: var(--card-title-font-size);
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    margin: var(--in-card-margin) 0rem;
-}
-
-.text-sample:before {
-    content: '';
-    width: 100%;
-    height: 2rem;
-    position: absolute;
-    border-radius: 0 0 var(--medium-border-radius) var(--medium-border-radius);
-    right: 0rem;
-    bottom: 0rem;
-    background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color) 40%, transparent);
-}
-
-.card:hover .text-sample:before {
-    background: linear-gradient(0deg, var(--light-background) 0%, var(--light-background) 40%, transparent);
-}
-
-.card>.image-card {
-    min-width: calc(100% + 2 * var(--card-padding) + 2 * var(--border-width));
-    margin-left: calc(0rem - var(--card-padding) - var(--border-width));
-    margin-top: calc(0rem - var(--border-width));
-    object-fit: cover;
-    height: 11rem;
-    border-bottom: var(--hr);
-    border-radius: calc(var(--medium-border-radius) - var(--border-width)) calc(var(--medium-border-radius) - var(--border-width)) 0 0;
-}
-
-.image-card {
-    object-fit: cover;
-    background-color: var(--light-background);
-}
-
-.card>h4 {
-    margin-top: var(--in-card-margin);
-}
-
-.date {
-    font-size: 85%;
+.card-details {
+    margin: 0rem 0rem var(--in-card-margin) 0rem;
+    font-size: 0.85rem;
     color: var(--disabled-color);
-    margin: 0 0 var(--in-card-margin) 0;
+}
+
+a.section-name {
+    z-index: 3;
+    position: relative;
+    display: inline-block;
+    text-decoration: underline;
+    color: var(--disabled-color);
+    text-decoration-color: var(--disabled-color);
+    transition: var(--transition);
+}
+
+a.section-name:hover {
+    color: var(--text-color);
+    text-decoration-color: var(--text-color);
 }
 
 /* Boutons de navigation */
@@ -554,7 +520,7 @@ table tr th:last-child {
     text-align: center;
     border-radius: var(--medium-border-radius);
     margin: 0;
-    transition: 0.1s ease-in-out;
+    transition: var(--transition);
     text-decoration: none !important;
     color: var(--main-color);
     font-weight: 500;

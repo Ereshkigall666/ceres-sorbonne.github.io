@@ -66,7 +66,7 @@ button.contact {
 }
 
 button.contact:after {
-    transition: 0.1s ease-in-out;
+    transition: var(--transition);
     transition-delay: 0.7s;
     color: transparent;
     content: " : lettres-ceres@sorbonne-universite.fr";

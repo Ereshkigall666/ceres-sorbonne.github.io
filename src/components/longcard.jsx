@@ -14,9 +14,6 @@ export const LongCard = ({ postData, toggleTag, selectedTags }) => {
             {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title}/>) : (<img className="image-card"/>)}
             <div className="description">
                 <h4>{title}</h4>
-                {tags && (<div class="small-tags-container">
-                    {tags ? tags.map(t => <Tag tagName={t} selectedTags={selectedTags} toggleTag={toggleTag} />) : ""}
-                </div>)}
                 {
                     sound && (
                         <audio controls>
@@ -24,6 +21,13 @@ export const LongCard = ({ postData, toggleTag, selectedTags }) => {
                         </audio>
                     )
                 }
+                {date && (
+                    <div className="card-details">
+                        <time className="date" dateTime={date}>{date}</time> • <Link className="section-name" to={`/${collection}`}>{collection}</Link>
+                    </div>)}
+                {tags && (<div class="small-tags-container">
+                    {tags ? tags.map(t => <Tag tagName={t} selectedTags={selectedTags} toggleTag={toggleTag} />) : ""}
+                </div>)}
                 <p class="text-sample">
                     {abstract ? abstract : postData.excerpt}
                 </p>
