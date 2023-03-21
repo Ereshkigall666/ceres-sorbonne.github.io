@@ -37,7 +37,7 @@ const Layout = ({ children, nodes }) => {
     // create menu
     const menu = []
     const orderedPages = [...pages].sort((el1, el2) => el1.group > el2.group )
-    let startPage = 0
+    let startPage = 1
     orderedPages.forEach(page => {
         if(page.group != startPage){
             menu.push({ name: '|' })
