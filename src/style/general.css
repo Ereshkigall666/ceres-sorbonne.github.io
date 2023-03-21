@@ -484,6 +484,8 @@ table tr th:last-child {
 .card-details {
     margin: 0rem 0rem var(--in-card-margin) 0rem;
     font-size: 0.85rem;
+    height: 1.2rem;
+    overflow: hidden;
     color: var(--disabled-color);
 }
 
