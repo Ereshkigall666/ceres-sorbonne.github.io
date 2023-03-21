@@ -23,7 +23,7 @@ export const LongCard = ({ postData, toggleTag, selectedTags }) => {
                 }
                 {date && (
                     <div className="card-details">
-                        <time className="date" dateTime={date}>{date}</time> • <Link className="section-name" to={`/${collection}`}>{collection}</Link>
+                        <time dateTime={date}>{date}</time> • <Link className="section-name" to={`/${collection}`}>{collection}</Link>
                     </div>)}
                 {tags && (<div class="small-tags-container">
                     {tags ? tags.map(t => <Tag tagName={t} selectedTags={selectedTags} toggleTag={toggleTag} />) : ""}

@@ -35,7 +35,7 @@ const Layout = ({ children, nodes }) => {
         return { name: name[0].toUpperCase() + name.slice(1), link: `/${name}/`, group}
     })
     // create menu
-    const menu = [{ name: 'Accueil', link: '/' }]
+    const menu = []
     const orderedPages = [...pages].sort((el1, el2) => el1.group > el2.group )
     let startPage = 0
     orderedPages.forEach(page => {
