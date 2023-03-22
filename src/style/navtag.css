@@ -75,6 +75,12 @@ only screen and (hover: none) and (pointer: coarse) {
     display: none;
 }
 
+/* Bouton d'ouverture */
+
+button>div {
+    line-height: 1.4rem;
+}
+
 /* Tags du panneau */
 
 #tags-panel-tree .small-tag {
@@ -83,11 +89,12 @@ only screen and (hover: none) and (pointer: coarse) {
 
 /* Liste non ordonnée de tags */
 
-.wild-tags{
+.wild-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
 }
+
 /* Listes de tags */
 
 #tags-panel-tree,

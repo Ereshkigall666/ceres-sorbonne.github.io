@@ -144,6 +144,44 @@ img[alt="small"] {
     max-height: 60vh;
 }
 
+/* Notes de bas de page */
+
+a.footnote-ref,
+a.footnote-backref:after,
+a.footnote-backref {
+    font-weight: 500;
+    padding: 0.15rem;
+    margin: 0.1rem;
+    border-radius: 1rem;
+    background-color: rgba(var(--main), 0.15);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a.footnote-ref {
+    vertical-align: top;
+    position: relative;
+    font-size: 0.8rem;
+}
+
+a.footnote-backref {
+    visibility: hidden;
+    display: inline-block;
+    font-size: 0.0001rem;
+}
+
+a.footnote-backref:after {
+    font-size: 0.8rem;
+    content: "↑";
+    visibility: visible;
+    font-family: "Inter";
+}
+
+a.footnote-ref:hover,
+a.footnote-backref:hover:after {
+    background-color: rgba(var(--main), 0.3);
+}
+
 /* Breakpoints et print */
 
 @media print {

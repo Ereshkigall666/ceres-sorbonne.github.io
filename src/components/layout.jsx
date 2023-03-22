@@ -4,6 +4,7 @@ import '../style/header.css'
 import '../style/footer.css'
 import '../style/navtag.css'
 import { Link, graphql, useStaticQuery } from "gatsby"
+import { transform } from 'lodash'
 
 // import { Link } from 'gatsby'
 
@@ -32,14 +33,14 @@ const Layout = ({ children, nodes }) => {
 
     const pages = data.site.siteMetadata.pages.map(page => {
         const [group, _, name] = page.split('_')
-        return { name: name[0].toUpperCase() + name.slice(1), link: `/${name}/`, group}
+        return { name: name[0].toUpperCase() + name.slice(1), link: `/${name}/`, group }
     })
     // create menu
     const menu = []
-    const orderedPages = [...pages].sort((el1, el2) => el1.group > el2.group )
+    const orderedPages = [...pages].sort((el1, el2) => el1.group > el2.group)
     let startPage = 1
     orderedPages.forEach(page => {
-        if(page.group != startPage){
+        if (page.group != startPage) {
             menu.push({ name: '|' })
             startPage = page.group
         }
@@ -167,7 +168,9 @@ const LeftNav = ({ allTags, open, setOpen, selectedTags, toggleTag, search, setS
                     <p style={{ visibility: open ? 'visible' : 'hidden' }}>
                         <strong>Recherche de contenus par concepts</strong>
                     </p>
-                    <a className="discrete-button" onClick={() => setOpen(!open)}> {open ? '\u2190' : '\u2192'}</a>
+                    <button className="discrete-button" onClick={() => setOpen(!open)}>
+                        <div style={{ fontSize: open ? '1rem' : '1.4rem', transform: open ? 'none' : 'rotate(50deg)' }}> {open ? '\u2190' : '\u26b2'} </div>
+                    </button>
                 </div>
                 <div id="tags-panel-text" style={{ visibility: open ? 'visible' : 'hidden' }}>
                     <input type="text" placeholder="Recherche dans le texte" value={search} onChange={(e) => setSearch(e.target.value)} />
