@@ -53,8 +53,8 @@
 
     /* Mesures générales */
     --min-margin: calc(0.5rem + 1.5vw);
-    --small-border-radius: 0.3rem;
-    --medium-border-radius: 0.4rem;
+    --small-border-radius: 0.2rem;
+    --medium-border-radius: 0.3rem;
 
     /* Mesures des articles */
     --toc-width: calc(20rem);
@@ -430,6 +430,16 @@ table tr th:last-child {
 
 /* Cartes général */
 
+.card:hover,
+.long-card:hover {
+    background-color: var(--light-background);
+}
+
+.card:hover .text-sample:before,
+.long-card:hover .text-sample:before {
+    background: linear-gradient(0deg, var(--light-background) 0%, var(--light-background) 40%, transparent);
+}
+
 #cards-container {
     max-width: var(--max-cards-width) !important;
     margin: 0 auto 3rem auto;
@@ -452,19 +462,31 @@ table tr th:last-child {
     border-radius: var(--medium-border-radius);
 }
 
-.card>h4 {
+.card h4,
+.long-card h4 {
     text-overflow: ellipsis;
     font-size: var(--card-title-font-size);
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    margin: var(--in-card-margin) 0rem;
+    margin: 0rem 0rem var(--in-card-margin) 0rem;
 }
 
 .text-sample {
     font-size: 0.85rem;
     margin: 0;
+}
+
+.text-sample:before {
+    content: '';
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    border-radius: 0 0 var(--medium-border-radius) var(--medium-border-radius);
+    right: 0rem;
+    bottom: 0rem;
+    background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color) 40%, transparent);
 }
 
 .small-tags-container {
@@ -478,6 +500,11 @@ table tr th:last-child {
 
 .small-tags-container>.small-tag {
     z-index: 2;
+}
+
+.image-card {
+    object-fit: cover;
+    background-color: var(--light-background);
 }
 
 .card-details {

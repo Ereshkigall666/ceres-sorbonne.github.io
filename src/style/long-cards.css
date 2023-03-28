@@ -17,12 +17,7 @@
     background: var(--background-color);
 }
 
-.long-card:hover {
-    background-color: var(--light-background);
-}
-
-
-.image-card {
+.long-card .image-card {
     flex: 1 1 10rem;
     max-width: 15rem;
     margin: calc(0rem - var(--card-padding)) 0 0 calc(0rem - var(--card-padding));
@@ -31,49 +26,19 @@
     z-index: 1;
 }
 
-.image-card img {
+.long-card .image-card img {
     border-radius: 0rem !important;
 }
 
-.description {
-    display: flex;
+.long-card .description {
     flex: 1 1 auto;
     width: 60%;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.description>* {
-    margin: 0;
-}
-
-.description>h4 {
-    flex: 0 0 content;
-    font-size: var(--card-title-font-size);
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-
-.description>.small-tags-container {
-    flex: 0 0 content;
-}
-
-.description>.text-sample {
-    flex: 1 1 auto;
     overflow: hidden;
 }
 
-.long-card:hover .text-sample:before {
-    background: linear-gradient(0deg, var(--light-background) 0%, var(--light-background) 40%, transparent);
-}
-
-.description>audio {
+.long-card audio {
+    position: relative;
     z-index: 3;
-    flex: 0 0 auto;
     width: 100%;
+    margin: 0rem 0rem var(--in-card-margin) 0rem;
 }
