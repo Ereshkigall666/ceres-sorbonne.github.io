@@ -8,7 +8,7 @@ main>header {
     width: 100%;
     object-fit: cover;
     height: 50vh;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 h1#landing-title {
@@ -76,7 +76,7 @@ img.landing-block {
     background: var(--light-background);
     color: var(--light-background);
     font-size: 0.1rem;
-    border-radius: 0.2rem;
+    border-radius: var(--small-border-radius);
 }
 
 .react-calendar__navigation__prev-button::after {

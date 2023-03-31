@@ -20,7 +20,7 @@ const BlogPost = ({ data, children }) => {
                         {author && date && (<span id="article-meta">Un article écrit par {authorName} le {date}</span>)}
                         <button className="button print" onClick={() => { window.print(); }}>&darr; Enregistrer au format pdf</button>
                         {tags && (<div id="tags-container">
-                            {tags ? tags.map((el, i) => <a className="tag" key={i}>{el}</a>) : ''}
+                            {tags ? tags.map((el, i) => <a className="tag" key={i} >{el}</a>) : ''}
                         </div>)}
                     </header>
                     <article id="article">

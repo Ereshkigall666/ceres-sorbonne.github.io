@@ -10,7 +10,7 @@
     background: var(--background-color);
     border-right: var(--hr);
     z-index: 3;
-    box-shadow: 0 0 2rem rgba(var(--background), 0.6);
+    box-shadow: 0 0 2rem rgb(var(--background), 0.6);
 }
 
 #tags-panel {

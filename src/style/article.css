@@ -130,7 +130,7 @@ img {
     max-height: 70vh;
     display: block;
     margin: 1.5rem auto;
-    border-radius: 0.16rem;
+    border-radius: var(--small-border-radius);
 }
 
 img[alt="big"] {
@@ -152,7 +152,7 @@ a.footnote-backref {
     padding: 0.15rem;
     margin: 0.1rem;
     border-radius: 1rem;
-    background-color: rgba(var(--main), 0.15);
+    background-color: var(--to-hover-background);
     text-decoration: none;
     transition: var(--transition);
 }
@@ -178,7 +178,7 @@ a.footnote-backref:after {
 
 a.footnote-ref:hover,
 a.footnote-backref:hover:after {
-    background-color: rgba(var(--main), 0.3);
+    background-color: var(--hovered-background);
 }
 
 /* Breakpoints et print */
@@ -212,15 +212,18 @@ a.footnote-backref:hover:after {
         padding: 0rem !important;
     }
 
-    aside:not(+section),
+    aside,
     p>img {
         display: inline-block;
         break-inside: avoid;
         page-break-inside: avoid;
         position: relative;
-        width: max-content;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    aside {
+        width: 85%;
     }
 
     img {
@@ -262,7 +265,7 @@ a.footnote-backref:hover:after {
     }
 
     a {
-        text-decoration-color: rgb(var(--main), 0.8) !important;
+        text-decoration-color: var(--main-border-color) !important;
         text-decoration-thickness: 0.05rem !important;
     }
 

@@ -124,7 +124,7 @@ const Header = ({ menu }) => {
                 {menu.map((el, i) => !el.link ? <hr className="header-div-v" key={i} /> : <Link className="header-link" key={i} to={el.link}>{el.name}</Link>)}
                 <hr className="header-div-v" />
                 <button className="discrete-button" onClick={changeColor}>
-                    <svg className="color-mode" width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="color-mode" width="90" height="90" viewBox="0 0 90 95" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M45 90C69.8528 90 90 69.8528 90 45C90 20.1472 69.8528 0 45 0C20.1472 0 0 20.1472 0 45C0 69.8528 20.1472 90 45 90ZM58 71C71.8071 71 83 59.8071 83 46C83 32.1929 71.8071 21 58 21C44.1929 21 33 32.1929 33 46C33 59.8071 44.1929 71 58 71Z" fill="currentColor" />
                     </svg>
                 </button>
