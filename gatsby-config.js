@@ -12,6 +12,13 @@ let config = {
       { id: `thomas`, name: `Thomas Bottini` },
       { id: `felix`, name: `Félix Alié` },
       { id: `edouard`, name: `Édouard Bouté` },
+      { id: `gael`, name: `Gaël Lejeune` },
+      { id: `virginie`, name: `Virginie Julliard` },
+      { id: `thibault`, name: `Thibault Grison` },
+      { id: `clara`, name: `Clara Bordier` },
+      { id: `lea`, name: `Léa Andolfi` },
+      { id: `rimane`, name: `Rimane Karam` },
+      { id: `julien`, name: `Julien Bezançon` },
       { id: `victor`, name: `Victor Ecrement` },
       { id: `ceres`, name: `L'équipe CERES` }
     ],
