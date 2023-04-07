@@ -65,20 +65,21 @@
     --small-border-radius: 0.2rem;
     --medium-border-radius: 0.3rem;
 
-    /* Mesures des articles */
+    --transition: 0.1s ease-in-out;
+
+    /* Articles */
     --toc-width: calc(20rem);
     --toc-padding: 1rem;
     --ext-margin: max(1rem, 40vw - 25rem);
     --art-width: 43rem;
     --meta-margin: 1.2rem;
+    --toc-shadow: 0rem 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 
-    /* Mesures de cartes */
+    /* Cartes */
     --in-card-margin: 0.5rem;
     --card-padding: 1rem;
     --max-cards-width: 80rem;
     --card-title-font-size: 1.35rem;
-
-    --transition: 0.1s ease-in-out;
 }
 
 /* Sélection et focus */

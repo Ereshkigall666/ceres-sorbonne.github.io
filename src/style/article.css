@@ -48,6 +48,7 @@ button.print {
     list-style: none;
     color: var(--disabled-color);
     z-index: 1;
+    box-shadow: var(--toc-shadow);
 }
 
 #toc-container>nav>ul {
