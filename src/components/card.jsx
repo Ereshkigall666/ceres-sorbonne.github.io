@@ -12,7 +12,9 @@ export const Card = ({ postData, toggleTag, selectedTags }) => {
     return (
         <div className="card">
             <Link className="card-link" to={`/${collection}/` + slug} />
-            {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title} />) : (<img className="image-card" />)}
+            {/* <div className="image-card-wrapper"> */}
+                {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title} />) : (<img className="image-card" />)}
+            {/* </div> */}
             <h4>{title}</h4>
             <div className="card-details">
                 <time dateTime={date}>{date}</time> • <Link className="section-name" to={`/${collection}`}>{collection}</Link>
