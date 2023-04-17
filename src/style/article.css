@@ -182,6 +182,17 @@ a.footnote-backref:hover:after {
     background-color: var(--hovered-background);
 }
 
+/* Section de notes de bas de page, voir la mise en forme du H2 */
+
+.footnotes hr {
+    display: none;
+}
+
+.footnotes::before {
+    content: "Notes";
+    display: block;
+}
+
 /* Breakpoints et print */
 
 @media print {
