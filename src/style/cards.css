@@ -35,6 +35,8 @@
     transition: 0.1s ease-in-out !important;
 }
 
+/* Image duotone on hover */
+
 /* 
 .card .image-card-wrapper::before {
     background-color: var(--light-main-color);
