@@ -216,6 +216,10 @@ a.footnote-backref:hover:after {
         display: none;
     }
 
+    #page-container {
+        margin: 0rem
+    }
+
     #article-container {
         max-width: calc(100% - 4 * var(--border-width));
         width: calc(100% - 4 * var(--border-width));
@@ -249,6 +253,10 @@ a.footnote-backref:hover:after {
         position: relative;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    table {
+        max-width: calc(100% - 4 * var(--border-width));
     }
 
     img[alt="big"] {
