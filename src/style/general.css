@@ -66,12 +66,12 @@
     --card-title-font-size: 1.35rem;
 
     /* Articles */
-    --toc-width: calc(20rem);
+    --toc-width: calc(22rem);
+    --toc-height: calc(100vh - 12rem);
     --toc-padding: 1rem;
-    --ext-margin: max(1rem, 40vw - 25rem);
-    --art-width: 43rem;
+    --ext-margin: max(1rem, 40vw - 26rem);
+    --art-width: 40rem;
     --meta-margin: 1.2rem;
-    --toc-shadow: 0rem 0.1rem 0.4rem rgba(0, 0, 0, 0.15);
 
     /* Tableaux */
     --cal-font-size: calc(0.8rem + 0.15vw);
@@ -486,7 +486,7 @@ table tr th:last-child {
     margin: 0;
 }
 
-.text-sample:before {
+.text-sample::before {
     content: '';
     width: 100%;
     height: calc(0.5rem + var(--card-padding));

@@ -37,6 +37,7 @@ button.print {
 
 #toc-container {
     position: fixed;
+    overflow: hidden;
     right: var(--ext-margin);
     width: var(--toc-width);
     margin-top: 1rem;
@@ -44,27 +45,52 @@ button.print {
     background-color: var(--background-color);
     border: var(--hr);
     border-radius: var(--small-border-radius);
-    padding: 0 var(--toc-padding);
+    padding: var(--toc-padding);
     list-style: none;
     color: var(--disabled-color);
     z-index: 1;
-    box-shadow: var(--toc-shadow);
 }
 
-#toc-container>nav>ul {
-    max-height: calc(85vh - 12rem);
-    margin: 0.8rem 0 1.6rem 0;
+#toc-container>nav::before,
+#toc-container>nav::after {
+    content: '';
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    left: 0rem;
+    background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color) 5%, transparent);
+}
+
+#toc-container>nav::before {
+    height: 3rem;
+    top: calc(var(--toc-height) - var(--toc-padding) * 2);
+}
+
+#toc-container>nav::after {
+    height: 0.5rem;
+    top: var(--toc-padding);
+    transform: rotate(180deg);
+}
+
+#toc-container>nav {
+    max-height: var(--toc-height);
     overflow-y: scroll;
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-#toc-container>nav>ul::-webkit-scrollbar {
+#toc-container>nav::-webkit-scrollbar {
     display: none;
 }
 
-#toc-container li {
+#toc-container>nav>ul {
+    margin: 0rem 0rem 1.2rem 0rem;
+}
+
+#toc-container li,
+#toc-container li p {
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -158,8 +184,11 @@ a.footnote-backref {
     transition: var(--transition);
 }
 
-a.footnote-ref {
+sup {
     vertical-align: top;
+}
+
+a.footnote-ref {
     position: relative;
     font-size: 0.8rem;
 }
