@@ -388,26 +388,25 @@ hr {
 /* Tableaux */
 
 table {
-    overflow: hidden;
+    table-layout: auto;
     margin: 1rem auto;
     border-radius: var(--small-border-radius);
     box-shadow: 0 0 0 var(--small-border-width) var(--hr-color);
     border-collapse: collapse;
     border-style: hidden;
     font-size: var(--table-font-size);
-    table-layout: auto;
-    width: 100%;
 }
 
 table td,
 table th {
     border: var(--hr) !important;
     padding: calc(0.3rem + 0.4vw);
+    overflow-wrap: break-word;
     word-wrap: break-word;
-    hyphens: auto;
+    -webkit-hyphens: auto;
     -ms-hyphens: auto;
     -moz-hyphens: auto;
-    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 table td {
