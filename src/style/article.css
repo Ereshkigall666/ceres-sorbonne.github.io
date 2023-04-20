@@ -332,6 +332,10 @@ only screen and (hover: none) and (pointer: coarse) {
         display: none;
     }
 
+    table td {
+        word-break: break-all;
+    }
+
     #toc-container+#article-container {
         position: static;
         right: auto;
