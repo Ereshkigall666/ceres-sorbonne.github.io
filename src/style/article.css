@@ -170,6 +170,11 @@ img[alt="small"] {
     max-height: 60vh;
 }
 
+img[alt="verysmall"] {
+    max-width: 40%;
+    max-height: 40vh;
+}
+
 /* Notes de bas de page */
 
 a.footnote-ref,
@@ -298,6 +303,11 @@ a.footnote-backref:hover:after {
         max-height: 23vh;
     }
 
+    img[alt="verysmall"] {
+        max-width: 40%;
+        max-height: 15vh;
+    }
+
     h1,
     h2,
     h3,
@@ -325,15 +335,17 @@ a.footnote-backref:hover:after {
     }
 }
 
+@media (max-width: 40rem) {
+    table td {
+        word-break: break-all;
+    }
+}
+
 @media (max-width: 60rem),
 only screen and (hover: none) and (pointer: coarse) {
 
     #toc-container {
         display: none;
-    }
-
-    table td {
-        word-break: break-all;
     }
 
     #toc-container+#article-container {

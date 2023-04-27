@@ -369,13 +369,26 @@ a:not([class]):not([id])[href^="/"]:hover {
 
 aside {
     color: var(--intense-text-color);
-    padding: 0.2rem 1rem;
+    padding: 0.8rem 1rem;
     margin: 1.2rem auto;
     width: 85%;
     background-color: var(--light-main-background);
     border-radius: var(--medium-border-radius);
     border: var(--border-width) solid rgb(var(--main), 0.5);
     border-left: 0.5rem solid rgb(var(--main), 0.5);
+}
+
+aside>*:only-child {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+aside>*:first-child {
+    margin-top: 0rem;
+}
+
+aside>*:last-child {
+    margin-bottom: 0rem;
 }
 
 /* Diviseurs */
