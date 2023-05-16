@@ -21,12 +21,7 @@
 }
 
 .card .image-card {
-    border-bottom: var(--hr);
     border-radius: calc(var(--medium-border-radius) - var(--border-width)) calc(var(--medium-border-radius) - var(--border-width)) 0 0;
-}
-
-/* .image-card-wrapper::before, */
-.card .image-card {
     min-width: calc(100% + 2 * var(--card-padding) + 2 * var(--border-width));
     margin-left: calc(0rem - var(--card-padding) - var(--border-width));
     margin-top: calc(0rem - var(--border-width));
@@ -34,23 +29,3 @@
     height: 11rem;
     transition: 0.1s ease-in-out !important;
 }
-
-/* Image duotone on hover */
-
-/* 
-.card .image-card-wrapper::before {
-    background-color: var(--light-main-color);
-    mix-blend-mode: screen;
-    opacity: 0;
-    content: '';
-    position: absolute;
-    z-index: 1;
-}
-
-.card:hover .image-card {
-    filter: grayscale(100%);
-}
-
-.card:hover .image-card-wrapper::before {
-    opacity: 1;
-} */

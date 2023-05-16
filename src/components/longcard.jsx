@@ -11,7 +11,7 @@ export const LongCard = ({ postData, toggleTag, selectedTags }) => {
     return (
         <div className="long-card">
             <Link className="card-link" to={`/${collection}/` + slug} />
-            {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title}/>) : (<img className="image-card"/>)}
+            {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title} />) : (<div className="image-card" />)}
             <div className="description">
                 <h4>{title}</h4>
                 {
@@ -25,10 +25,10 @@ export const LongCard = ({ postData, toggleTag, selectedTags }) => {
                     <div className="card-details">
                         <time dateTime={date}>{date}</time> • <Link className="section-name" to={`/${collection}`}>{collection}</Link>
                     </div>)}
-                {tags && (<div class="small-tags-container">
+                {tags && (<div className="small-tags-container">
                     {tags ? tags.map(t => <Tag tagName={t} selectedTags={selectedTags} toggleTag={toggleTag} />) : ""}
                 </div>)}
-                <p class="text-sample">
+                <p className="text-sample">
                     {abstract ? abstract : postData.excerpt}
                 </p>
             </div>
