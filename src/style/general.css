@@ -64,6 +64,7 @@
     --card-padding: 1rem;
     --max-cards-width: 80rem;
     --card-title-font-size: 1.35rem;
+    --small-tags-container-height: calc(0.8rem + (2 * 0.4rem) + (2 * var(--border-width)));
 
     /* Articles */
     --toc-width: clamp(14rem, 30vw, 22rem);
@@ -508,15 +509,50 @@ table tr th:last-child {
 
 .small-tags-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 0.5rem;
     margin: var(--in-card-margin) 0 var(--in-card-margin) 0;
-    height: calc(0.8rem + (2 * 0.4rem) + (2 * var(--border-width)));
-    overflow: hidden;
+    height: var(--small-tags-container-height);
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.small-tags-container::before,
+.small-tags-container::after {
+    content: '';
+    z-index: 3;
+    height: var(--small-tags-container-height);
+    position: absolute;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--background-color) 0%, var(--background-color) 5%, transparent);
+}
+
+.small-tags-container::before {
+    width: 0.1rem;
+    visibility: hidden;
+}
+
+.small-tags-container::after {
+    width: 0.3rem;
+    right: var(--card-padding);
+    transform: rotate(180deg);
+}
+
+.card:hover .small-tags-container::before,
+.card:hover .small-tags-container::after,
+.long-card:hover .small-tags-container::before,
+.long-card:hover .small-tags-container::after {
+    visibility: visible;
+    background: linear-gradient(90deg, var(--light-background) 0%, var(--light-background) 5%, transparent);
+}
+
+.small-tags-container:-webkit-scrollbar {
+    display: none;
 }
 
 .small-tags-container>.small-tag {
     z-index: 2;
+    white-space: nowrap;
 }
 
 .image-card {
