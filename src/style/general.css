@@ -546,8 +546,8 @@ table tr th:last-child {
     background: linear-gradient(90deg, var(--light-background) 0%, var(--light-background) 5%, transparent);
 }
 
-.small-tags-container:-webkit-scrollbar {
-    display: none;
+.small-tags-container::-webkit-scrollbar {
+    display: none !important;
 }
 
 .small-tags-container>.small-tag {
