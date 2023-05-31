@@ -161,10 +161,13 @@ img {
 }
 
 img:hover {
-    z-index: 1000 !important;
+    z-index: 8 !important;
 }
 
 img[alt="big"] {
+    /* max-width: min(130%, calc(100vw - 2 * var(--min-margin) - 2rem)); */
+    /* left: -15%; */
+    position: relative;
     max-width: 100%;
     max-height: 90vh;
 }
