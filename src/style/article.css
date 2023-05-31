@@ -160,8 +160,12 @@ img {
     border-radius: var(--small-border-radius);
 }
 
+img:hover {
+    z-index: 1000 !important;
+}
+
 img[alt="big"] {
-    max-width: 100%;
+    max-width: 120%;
     max-height: 90vh;
 }
 
