@@ -21,6 +21,7 @@ let config = {
       { id: `julien`, name: `Julien Bezançon` },
       { id: `victor`, name: `Victor Ecrement` },
       { id: `marceau`, name: `Marceau Hernandez` },
+      { id: `gm`, name: `Gaël Lejeune & Marceau Hernandez` },
       { id: `ceres`, name: `L'équipe CERES` }
     ],
     pages: []
