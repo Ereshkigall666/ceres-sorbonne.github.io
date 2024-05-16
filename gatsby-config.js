@@ -20,6 +20,7 @@ let config = {
       { id: `rimane`, name: `Rimane Karam` },
       { id: `julien`, name: `Julien Bezançon` },
       { id: `victor`, name: `Victor Ecrement` },
+      { id: `marceau`, name: `Marceau Hernandez` },
       { id: `ceres`, name: `L'équipe CERES` }
     ],
     pages: []
