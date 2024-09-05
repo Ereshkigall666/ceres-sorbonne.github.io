@@ -9,6 +9,7 @@ main>header {
     object-fit: cover;
     height: 50vh;
     image-rendering: pixelated;
+    max-height: 200px;
 }
 
 h1#landing-title {
