@@ -14,10 +14,10 @@ main>header {
 
 #landing-logo {
   position: relative; /* Il est maintenant positionné par rapport à la .image-container */
-  max-width: 30%; /* Limiter la taille du logo par rapport à l'image */
+  max-height: 200px; /* Limiter la taille du logo par rapport à l'image */
   height: auto; /* Ajustement automatique de la hauteur */
   margin-left: 1rem; /* Espacement par rapport au bord gauche */
-  top: -3rem; /* Ajustement vertical du logo */
+  top: -11.7rem; /* Ajustement vertical du logo */
   z-index: 2; /* Au-dessus du dégradé */
 }
 
