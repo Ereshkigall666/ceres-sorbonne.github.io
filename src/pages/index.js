@@ -41,8 +41,9 @@ const HomeHeader = ({ nodes }) => (
         <div class="image-container">
             <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} />
             <div class="gradient-overlay"></div>
+            <img id="landing-logo" src={LogoCeres} style={{ maxWidth: "100%", margin: 0 }} />
         </div>
-        <img id="landing-logo" src={LogoCeres} style={{ maxWidth: "100%", margin: 0 }} />
+        
         <div id="landing-blocks-container">
             <div className="landing-block text">
                 <h2>Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales</h2>
