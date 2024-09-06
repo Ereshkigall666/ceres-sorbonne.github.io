@@ -38,7 +38,10 @@ const Home = ({ data }) => {
 
 const HomeHeader = ({ nodes }) => (
     <header>
-        <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} />
+        <div class="image-container">
+            <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} />
+            <div class="gradient-overlay"></div>
+        </div>
         <img id="landing-logo" src={LogoCeres} style={{ maxWidth: "100%", margin: 0 }} />
         <div id="landing-blocks-container">
             <div className="landing-block text">
