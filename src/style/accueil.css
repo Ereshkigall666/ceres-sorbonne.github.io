@@ -16,10 +16,11 @@ main>header {
     position: relative;
     top: -5.5rem;
     font-weight: 300;
-    font-size: 7rem;
+    font-size: 11rem;
     margin: 0 0 0 calc(1rem + 2.5vw);
     text-align: left;
     line-height: 0.8;
+    max-height: 180px;
 }
 
 h1#landing-title {
@@ -33,6 +34,15 @@ h1#landing-title {
     text-shadow: var(--background-color) 0 0 4rem,
         var(--background-color) 0 0 4rem,
         var(--background-color) 0 0 4rem;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ebe1db 0%, rgba(235, 225, 219, 0) 100%);
 }
 
 #landing-blocks-container {
