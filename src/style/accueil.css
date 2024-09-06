@@ -13,10 +13,13 @@ main>header {
 }
 
 #landing-logo {
-    width: 100%;
-    object-fit: cover;
-    height: 50vh;
-    max-height: 200px;
+    position: relative;
+    top: -5.5rem;
+    font-weight: 300;
+    font-size: 7rem;
+    margin: 0 0 0 calc(1rem + 2.5vw);
+    text-align: left;
+    line-height: 0.8;
 }
 
 h1#landing-title {
