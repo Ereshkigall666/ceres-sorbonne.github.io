@@ -13,14 +13,14 @@ main>header {
 }
 
 #landing-logo {
-    position: relative;
-    top: -5.5rem;
-    font-weight: 300;
-    font-size: 11rem;
-    margin: 0 0 0 calc(1rem + 2.5vw);
-    text-align: left;
-    line-height: 0.8;
-    max-height: 180px;
+  position: absolute;
+  top: 50%; /* Centré verticalement dans le conteneur */
+  left: 1rem;
+  transform: translateY(-50%); /* Correction pour le centrer */
+  font-weight: 300;
+  font-size: 11rem;
+  max-height: 180px;
+  z-index: 2; /* Pour que le logo soit au-dessus du dégradé */
 }
 
 h1#landing-title {
@@ -43,6 +43,15 @@ h1#landing-title {
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, #ebe1db 0%, rgba(235, 225, 219, 0) 100%);
+  z-index: 1; /* Pour que le dégradé soit au-dessus de l'image */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* S'ajuste à la hauteur de l'image */
+  max-height: 200px; /* Correspond à l'image et au logo */
+  overflow: hidden; /* Empêche le dépassement du logo et du dégradé */
 }
 
 #landing-blocks-container {
