@@ -2,6 +2,7 @@ import { graphql, Link } from "gatsby"
 import * as React from 'react'
 import Layout from '../components/layout'
 import Planet from '../images/ceres-dither-1000-serpentine.png'
+import LogoCeres from '../images/logo_ceresgrand.png'
 import { Card } from "../components/card"
 import { filterNodes, isDateOnCallendar } from "../helpers"
 import Calendar from 'react-calendar'
@@ -38,7 +39,7 @@ const Home = ({ data }) => {
 const HomeHeader = ({ nodes }) => (
     <header>
         <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} />
-        <h1 id="landing-title">Ceres</h1>
+        <img id="landing-logo" src={LogoCeres}>
         <div id="landing-blocks-container">
             <div className="landing-block text">
                 <h2>Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales</h2>
