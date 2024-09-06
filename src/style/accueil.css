@@ -13,11 +13,10 @@ main>header {
 }
 
 #landing-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%; /* Le logo aura la même hauteur que l'image de fond */
-    margin-left: 0px; /* Vous pouvez ajuster ce margin selon vos besoins */
+    width: 100%;
+    object-fit: cover;
+    height: 50vh;
+    max-height: 200px;
 }
 
 h1#landing-title {
