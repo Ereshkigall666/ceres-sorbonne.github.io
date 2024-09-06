@@ -13,14 +13,12 @@ main>header {
 }
 
 #landing-logo {
-  position: absolute;
-  top: 50%; /* Centré verticalement dans le conteneur */
-  left: 1rem;
-  transform: translateY(-50%); /* Correction pour le centrer */
-  font-weight: 300;
-  font-size: 11rem;
-  max-height: 180px;
-  z-index: 2; /* Pour que le logo soit au-dessus du dégradé */
+  position: relative; /* Il est maintenant positionné par rapport à la .image-container */
+  max-width: 30%; /* Limiter la taille du logo par rapport à l'image */
+  height: auto; /* Ajustement automatique de la hauteur */
+  margin-left: 1rem; /* Espacement par rapport au bord gauche */
+  top: -3rem; /* Ajustement vertical du logo */
+  z-index: 2; /* Au-dessus du dégradé */
 }
 
 h1#landing-title {
