@@ -13,20 +13,19 @@ main>header {
 }
 
 #landing-logo {
-  position: relative; /* Il est maintenant positionné par rapport à la .image-container */
+  position: absolute;
   max-height: 200px; /* Limiter la taille du logo par rapport à l'image */
   height: auto; /* Ajustement automatique de la hauteur */
   margin-left: 1rem; /* Espacement par rapport au bord gauche */
-  top: -11.7rem; /* Ajustement vertical du logo */
+  top: 0.2rem; /* Ajustement vertical du logo */
   z-index: 2; /* Au-dessus du dégradé */
 }
 
 #landing-sorbonne {
-  position: relative; /* Il est maintenant positionné par rapport à la .image-container */
-  max-height: 200px; /* Limiter la taille du logo par rapport à l'image */
+  position: absolute;
+  max-height: 194px; /* Limiter la taille du logo par rapport à l'image */
   height: auto; /* Ajustement automatique de la hauteur */
-  margin-right: 1rem; /* Espacement par rapport au bord gauche */
-  top: -11.7rem; /* Ajustement vertical du logo */
+  margin-right: 1rem;
   z-index: 3; /* Au-dessus du dégradé */
 }
 
