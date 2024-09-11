@@ -9,7 +9,7 @@
     transition: 0.1s;
     background: var(--background-color);
     border-right: var(--hr);
-    z-index: 3;
+    z-index: 4;
     box-shadow: 0 0 2rem rgb(var(--background), 0.6);
 }
 
