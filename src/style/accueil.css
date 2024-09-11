@@ -14,17 +14,17 @@ main>header {
 
 #landing-logo {
     position: absolute;
-    max-height: 200px; 
+    max-height: 170px; 
     height: auto; 
     margin-left: 1rem; 
-    top: 0.2rem; 
+    top: 1rem; 
     z-index: 3; 
 }
 
 #landing-sorbonne {
     position: absolute;
-    max-height: 194px; 
-    top: 0.2rem;
+    max-height: 145px; 
+    top: 1.7rem;
     z-index: 2; 
     right: 0.2vw;
 }
