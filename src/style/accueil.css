@@ -12,19 +12,25 @@ main>header {
     max-height: 200px;
 }
 
+
+#landing-image.full{
+    max-height: 450px;
+    transition: max-height 2s cubic-bezier(0,.72,.14,.99);
+}
+
 #landing-logo {
     position: absolute;
-    max-height: 170px; 
+    max-height: 110px; 
     height: auto; 
-    margin-left: 1rem; 
-    top: 1rem; 
+    left: 2.6rem; 
+    top: 2.8rem; 
     z-index: 3; 
 }
 
 #landing-sorbonne {
     position: absolute;
-    max-height: 145px; 
-    top: 1.7rem;
+    max-height: 100px; 
+    top: 3rem;
     z-index: 2; 
     right: -3.2vw;
 }

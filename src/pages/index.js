@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby"
 import * as React from 'react'
 import Layout from '../components/layout'
 import Planet from '../images/ceres-dither-1000-serpentine.png'
-import LogoCeres from '../images/logo_ceresgrand.png'
+import LogoCeres from '../images/logo_ceresgrand_anneau.png'
 import LogoSorbonne from '../images/lettres-logo-white.svg'
 import { Card } from "../components/card"
 import { filterNodes, isDateOnCallendar } from "../helpers"
@@ -37,15 +37,17 @@ const Home = ({ data }) => {
     )
 }
 
-const HomeHeader = ({ nodes }) => (
-    <header>
+const HomeHeader = ({ nodes }) => {
+    const [imageClass, setImageClass] = React.useState("")
+    setTimeout(() => setImageClass('full'), 0)
+    return (<header>
         <div class="image-container">
-            <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} />
-            <div class="gradient-overlay"></div>
+            <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} className={imageClass} />
+            {/* <div class="gradient-overlay"></div> */}
             <img id="landing-logo" src={LogoCeres} style={{ maxWidth: "100%", margin: 0 }} />
             <img id="landing-sorbonne" src={LogoSorbonne} style={{ maxWidth: "100%", margin: 0, height: "194px", width: "500px" }} />
         </div>
-        
+
         <div id="landing-blocks-container">
             <div className="landing-block text">
                 <h2>Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales</h2>
@@ -80,8 +82,8 @@ const HomeHeader = ({ nodes }) => (
                 {/* <img className="landing-block" src={Planet} /> */}
             </div>
         </div>
-    </header>
-)
+    </header>)
+}
 
 export const query = graphql`
   query MyQuery {
