@@ -6,6 +6,7 @@
     text-align: justify;
 }
 
+
 #article-header{
     background-image: url("/static/ceres-dither-1000-serpentine-a59d6fe6968543d70168ef4ad3ea84f3.png");
     background-repeat: no-repeat;
@@ -160,7 +161,7 @@ button.print {
     gap: 0.5rem;
     align-items: center;
     align-content: center;
-    width: 90%;
+    width: 50%;
     margin: var(--meta-margin) auto 0rem auto;
 }
 
@@ -261,6 +262,27 @@ a.footnote-backref:hover:after {
     content: "Notes";
     display: block;
 }
+
+details{
+    color: white;
+    border: solid var(--main-border-color) 0.5px;
+    border-radius: 5px;
+    padding: 0.5rem;   
+}
+
+details:hover{
+    cursor: pointer;
+    color: var(--main-color);
+    * {
+        cursor:default;
+        color: white;
+    };
+    summary{
+        cursor: pointer;
+        color: var(--main-color)
+    }
+}
+
 
 /* Breakpoints et print */
 
