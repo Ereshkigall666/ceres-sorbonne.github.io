@@ -1,4 +1,19 @@
 /* Article */
+.body {
+    --random-rotate :0deg
+}
+#article{
+    text-align: justify;
+}
+
+#article-header{
+    background-image: url("/static/ceres-dither-1000-serpentine-a59d6fe6968543d70168ef4ad3ea84f3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: -150px;
+    text-align: center;
+}
 
 #article-container {
     max-width: var(--art-width);
@@ -20,7 +35,8 @@
 }
 
 #article-meta {
-    color: var(--disabled-color);
+    /* color: var(--disabled-color); */
+    color: white
 }
 
 audio {
@@ -33,6 +49,15 @@ button.print {
     margin: var(--meta-margin) auto 0rem auto;
 }
 
+.overlay {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    backdrop-filter: hue-rotate(var(--random-rotate)) saturate(45%);
+    padding-top: 2em;
+}
+
 /* Table des matières */
 
 #toc-container {
@@ -40,7 +65,7 @@ button.print {
     overflow: hidden;
     right: var(--ext-margin);
     width: var(--toc-width);
-    margin-top: 1rem;
+    margin-top: 10rem;
     font-size: 0.9rem;
     background-color: var(--background-color);
     border: var(--hr);
@@ -49,6 +74,8 @@ button.print {
     list-style: none;
     color: var(--disabled-color);
     z-index: 1;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.31);
 }
 
 #toc-container>nav::before,
@@ -124,8 +151,8 @@ button.print {
 /* Tags */
 
 #tags-container {
-    border-top: var(--hr);
-    border-bottom: var(--hr);
+    /* border-top: var(--hr);
+    border-bottom: var(--hr); */
     padding: 0.6rem;
     display: flex;
     flex-wrap: wrap;
@@ -137,9 +164,9 @@ button.print {
     margin: var(--meta-margin) auto 0rem auto;
 }
 
-#tags-container:before {
+/* #tags-container:before {
     content: "Tags :"
-}
+} */
 
 /* Images */
 

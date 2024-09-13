@@ -31,6 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                uuid
               }
             }
           }
@@ -62,6 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allMarkdownRemark.edges.forEach((edge, index) => {
     const fields = edge.node.fields
+    const uuid = edge.node.frontmatter.uuid
     const collection = fields.collection
 
     if(fields.slug === ""){
@@ -70,8 +72,18 @@ exports.createPages = async ({ graphql, actions }) => {
     // const previous = index === posts.length - 1 ? null : posts[index + 1].node
     // const next = index === 0 ? null : posts[index - 1].node
 
+    // createPage({
+    //   path: `/${collection}/` + fields.slug,
+    //   component: path.resolve(`./src/templates/blog-post.jsx`),
+    //   context: {
+    //     slug: fields.slug,
+    //     // previous,
+    //     // next,
+    //   },
+    // })
+
     createPage({
-      path: `/${collection}/` + fields.slug,
+      path: `/${uuid}`,
       component: path.resolve(`./src/templates/blog-post.jsx`),
       context: {
         slug: fields.slug,
@@ -152,7 +164,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       sound: String
       author: String
       title: String!
-      event: Boolean
+      event: Boolean,
+      uuid: String,
     }
   `
   createTypes(typeDefs)

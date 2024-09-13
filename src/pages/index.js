@@ -101,6 +101,7 @@ export const query = graphql`
                 abstract
                 sound
                 event
+                uuid
             }
             fields {
                 collection

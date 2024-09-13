@@ -50,6 +50,7 @@ export const query = graphql`
             author
             abstract
             sound
+            uuid
             }
             fields {
             collection

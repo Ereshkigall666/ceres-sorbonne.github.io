@@ -6,12 +6,12 @@ import * as React from 'react'
 
 export const Card = ({ postData, toggleTag, selectedTags }) => {
     const { date, slug, image, collection } = postData.fields
-    const { title, tags, abstract } = postData.frontmatter
+    const { title, tags, abstract, uuid } = postData.frontmatter
     const content = abstract ? abstract : postData.excerpt
 
     return (
         <div className="card">
-            <Link className="card-link" to={`/${collection}/` + slug} />
+            <Link className="card-link" to={`/${uuid}`} />
             {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title} />) : (<div className="image-card" />)}
             <h4>{title}</h4>
             <div className="card-details">

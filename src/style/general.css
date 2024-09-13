@@ -70,7 +70,7 @@
     --toc-width: clamp(14rem, 30vw, 22rem);
     --toc-height: calc(100vh - 12rem);
     --toc-padding: 1rem;
-    --ext-margin: max(1rem, 40vw - 26rem);
+    --ext-margin: max(1rem, 40vw - 42rem);
     --art-width: 40rem;
     --meta-margin: 1.2rem;
 
