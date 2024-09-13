@@ -376,7 +376,14 @@ a.footnote-backref:hover:after {
     }
 }
 
-@media (max-width: 60rem),
+@media(max-width: 90rem),
+only screen and (hover: none) and (pointer: coarse){
+    #article-container{
+        margin-left: 5vw
+    }
+}
+
+@media (max-width: 70rem),
 only screen and (hover: none) and (pointer: coarse) {
 
     #toc-container {
@@ -387,6 +394,11 @@ only screen and (hover: none) and (pointer: coarse) {
         position: static;
         right: auto;
         margin-inline: max(calc(50% - var(--art-width) / 2), var(--min-margin));
+        margin-left: 0;
     }
 
+    #article-header{
+        background-color: var(--background-color);
+        background-image: none;
+    }
 }

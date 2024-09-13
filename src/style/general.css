@@ -67,7 +67,7 @@
     --small-tags-container-height: calc(0.8rem + (2 * 0.4rem) + (2 * var(--border-width)));
 
     /* Articles */
-    --toc-width: clamp(14rem, 30vw, 22rem);
+    --toc-width: clamp(14rem, 20vw, 22rem);
     --toc-height: calc(100vh - 12rem);
     --toc-padding: 1rem;
     --ext-margin: max(1rem, 40vw - 42rem);
@@ -125,6 +125,7 @@ body {
     font-family: "IBM Plex Sans", sans-serif;
     color: var(--text-color);
     margin: 0;
+    overflow-x: hidden;
 }
 
 #page-container {
@@ -287,6 +288,7 @@ a:not([href^="/"]) {
     text-underline-offset: 0.25em;
     text-decoration-thickness: 0.1em;
     text-decoration-color: rgb(var(--main), 0.4);
+    text-wrap: wrap;
 }
 
 
