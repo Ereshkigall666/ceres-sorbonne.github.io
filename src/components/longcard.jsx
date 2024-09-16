@@ -10,7 +10,7 @@ export const LongCard = ({ postData, toggleTag, selectedTags }) => {
 
     return (
         <div className="long-card">
-            <Link className="card-link" to={`/${uuid}` } />
+            <Link className="card-link" to={`/${collection}/` + slug} />
             {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title} />) : (<div className="image-card" />)}
             <div className="description">
                 <h4>{title}</h4>
