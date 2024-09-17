@@ -6,11 +6,11 @@ import * as React from 'react'
 
 export const LongCard = ({ postData, toggleTag, selectedTags }) => {
     const { date, slug, image, collection } = postData.fields
-    const { title, tags, abstract, sound } = postData.frontmatter
+    const { title, tags, abstract, sound, uuid } = postData.frontmatter
 
     return (
         <div className="long-card">
-            <Link className="card-link" to={`/${collection}/` + slug} />
+            <Link className="card-link" to={`/${uuid}`}/>
             {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title} />) : (<div className="image-card" />)}
             <div className="description">
                 <h4>{title}</h4>
