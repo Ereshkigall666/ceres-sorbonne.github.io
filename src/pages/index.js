@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby"
 import * as React from 'react'
 import Layout from '../components/layout'
 import Planet from '../images/ceres-dither-1000-serpentine.png'
-import LogoCeres from '../images/logo_ceresgrand_anneau.png'
+import LogoCeres from '../images/LOGO_CERES_SOMBRE-2.png'
 import LogoSorbonne from '../images/lettres-logo-white.svg'
 import { Card } from "../components/card"
 import { filterNodes, isDateOnCallendar } from "../helpers"
