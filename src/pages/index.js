@@ -92,7 +92,7 @@ export const query = graphql`
             title
         }
     }
-    allMarkdownRemark(sort: {fields: fields___date, order: DESC}, filter: {fields: {date: {ne: null}}}, limit: 999) {
+    allMarkdownRemark(sort: {fields: {date: DESC}}, filter: {fields: {date: {ne: null}}}, limit: 999) {
         nodes {
             frontmatter {
                 tags

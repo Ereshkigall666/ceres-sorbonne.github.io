@@ -38,7 +38,7 @@ const CardsLayout = ({ data }) => {
 export const query = graphql`
     query MyQuery($pageName: String = "") {
         allMarkdownRemark(
-        sort: {fields: fields___date, order: DESC}
+        sort: {fields: {date: DESC}},
         filter: {fields: {collection: {eq: $pageName}}}
         limit: 999
         ) {

@@ -69,14 +69,32 @@ let config = {
       },
       __key: "images"
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "outils",
+        "path": path.join(DIR, '_outils')
+      },
+    },
+    // {
+    //   resolve: `gatsby-transformer-csv`,
+    // }
   ],
 };
 
+console.log(folders)
 folders.forEach(folder => {
   if(!folder.startsWith('_') && fs.statSync(path.join(DIR, folder)).isDirectory() && folder !== '.git' && folder !== ".github"){
-    config.plugins.push({resolve: 'gatsby-source-filesystem', options: {name: folder.split('_')[2], path: path.join(DIR, folder)}})
+    config.plugins.push({
+      resolve: 'gatsby-source-filesystem', 
+      options: {
+        name: folder.split('_')[2], 
+        path: path.join(DIR, folder)}, 
+        // ignore: [`**/*.csv`, '*.csv', '**\\*.csv', '**\\*\.csv', '**\*.csv', path.join(DIR, folder, '2024-02-08_Tutoriel_tableau_Public', 'Fichier_Atelier.csv')]
+      })
     config.siteMetadata.pages.push(folder)
   }
 })
+
 
 module.exports = config
