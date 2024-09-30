@@ -2,6 +2,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
 const fs = require('fs')
 const csv = require('csv-parser');
+const { result } = require('lodash');
 // const thesaurus = require(`./src/data/thesaurus.json`)
 
 // ON CREE NOUS MEME DES NODES A PARTIR D'UN CSV POUR LE TABLEAU DES OUTILS
@@ -19,8 +20,9 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
       .pipe(csv())
       .on('data', (row) => {
         const nodeContent = JSON.stringify(row);
+        const slug = row.nom.split(' ').join('-').toLowerCase()
         const nodeMeta = {
-          id: createNodeId(`csv-node-${row.nom}`), // Assurez-vous que la colonne `id` existe dans votre CSV
+          id: createNodeId(`csv-node-${row.nom}`),
           parent: null,
           children: [],
           internal: {
@@ -31,7 +33,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
           },
         };
 
-        const node = { ...row, ...nodeMeta };
+        const node = { ...row, ...nodeMeta, slug };
         nodes.push(node);
       })
       .on('end', () => {
@@ -147,23 +149,10 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allMarkdownRemark.edges.forEach((edge, index) => {
     const fields = edge.node.fields
     const uuid = edge.node.frontmatter.uuid
-    const collection = fields.collection
 
     if(fields.slug === ""){
       return
     }
-    // const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    // const next = index === 0 ? null : posts[index - 1].node
-
-    // createPage({
-    //   path: `/${collection}/` + fields.slug,
-    //   component: path.resolve(`./src/templates/blog-post.jsx`),
-    //   context: {
-    //     slug: fields.slug,
-    //     // previous,
-    //     // next,
-    //   },
-    // })
 
     createPage({
       path: `/${uuid}`,
@@ -176,7 +165,33 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // now create tools pages
+  const toolsQuery = await graphql(
+    `
+    {
+      allCsvNode {
+      nodes {
+        nom,
+        slug
+      }
+    }
+  }`)
+  
+  toolsQuery.data.allCsvNode.nodes.forEach(node => {
+    const slug = node.slug
+    createPage({
+      path: `/outils/${slug}`,
+      component: path.resolve(`./src/templates/tool.jsx`),
+      context: {
+        slug,
+        // previous,
+        // next,
+      },
+    })
+  })
 }
+
+
 
 
 

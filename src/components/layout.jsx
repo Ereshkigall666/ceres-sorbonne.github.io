@@ -1,10 +1,10 @@
+import { graphql, Link, useStaticQuery } from "gatsby"
+import { transform } from 'lodash'
 import * as React from 'react'
+import '../style/footer.css'
 import '../style/general.css'
 import '../style/header.css'
-import '../style/footer.css'
 import '../style/navtag.css'
-import { Link, graphql, useStaticQuery } from "gatsby"
-import { transform } from 'lodash'
 
 // import { Link } from 'gatsby'
 
@@ -46,7 +46,6 @@ const Layout = ({ children, nodes }) => {
         }
         menu.push(page)
     })
-    console.log(menu)
 
     const nodesToUse = nodes ? nodes : data.allMarkdownRemark.nodes
     const allTags = new Set(nodesToUse.map(el => el.frontmatter.tags).filter(el => el !== null).flat().sort())
@@ -120,9 +119,9 @@ const Header = ({ menu }) => {
     return (
         <header>
             <nav id="header">
-                <a class="header-link" id="header-logo" href="/">
-                    <svg class="color-mode" width="90" height="90" viewBox="0 0 90 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M45 90C69.8528 90 90 69.8528 90 45C90 20.1472 69.8528 0 45 0C20.1472 0 0 20.1472 0 45C0 69.8528 20.1472 90 45 90ZM58 71C71.8071 71 83 59.8071 83 46C83 32.1929 71.8071 21 58 21C44.1929 21 33 32.1929 33 46C33 59.8071 44.1929 71 58 71Z" fill="currentColor"></path>
+                <a className="header-link" id="header-logo" href="/">
+                    <svg className="color-mode" width="90" height="90" viewBox="0 0 90 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M45 90C69.8528 90 90 69.8528 90 45C90 20.1472 69.8528 0 45 0C20.1472 0 0 20.1472 0 45C0 69.8528 20.1472 90 45 90ZM58 71C71.8071 71 83 59.8071 83 46C83 32.1929 71.8071 21 58 21C44.1929 21 33 32.1929 33 46C33 59.8071 44.1929 71 58 71Z" fill="currentColor"></path>
                     </svg>
                 </a>
                 {menu.map((el, i) => !el.link ? <hr className="header-div-v" key={i} /> : <Link className="header-link" key={i} to={el.link}>{el.name}</Link>)}
@@ -160,7 +159,7 @@ export const Tag = ({ tagName, selectedTags, toggleTag, nav = false }) =>
 
 const LeftNav = ({ allTags, open, setOpen, selectedTags, toggleTag, search, setSearch }) => {
     return (
-        <div id="tags-panel-container" style={{ left: open ? '1rem' : '-18rem', 'padding-right': open ? '1rem' : '0.5rem' }}>
+        <div id="tags-panel-container" style={{ left: open ? '1rem' : '-18rem', 'paddingRight': open ? '1rem' : '0.5rem' }}>
             <nav id="tags-panel">
                 <div id="title-button-container">
                     <p style={{ visibility: open ? 'visible' : 'hidden' }}>
@@ -180,7 +179,7 @@ const LeftNav = ({ allTags, open, setOpen, selectedTags, toggleTag, search, setS
                         <div className="parent-arrow" onclick="display_subconcepts(this)"></div>
                     </div> */}
                     <div className="wild-tags">
-                        {allTags.map(el => <Tag tagName={el} selectedTags={selectedTags} toggleTag={toggleTag} nav={true} />)}
+                        {allTags.map((el, id) => <Tag tagName={el} selectedTags={selectedTags} toggleTag={toggleTag} nav={true} key={id}/>)}
                     </div>
                     {/* <div className="parent-tag-container">
                         <a className="small-tag" onclick="select_tag(this)">Climate</a>

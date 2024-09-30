@@ -1,12 +1,12 @@
 import { graphql, Link } from "gatsby"
 import * as React from 'react'
-import Layout from '../components/layout'
-import Planet from '../images/ceres-dither-1000-serpentine.png'
-import LogoCeres from '../images/LOGO_CERES_SOMBRE-2.png'
-import LogoSorbonne from '../images/lettres-logo-white.svg'
-import { Card } from "../components/card"
-import { filterNodes, isDateOnCallendar } from "../helpers"
 import Calendar from 'react-calendar'
+import { Card } from "../components/card"
+import Layout from '../components/layout'
+import { filterNodes, isDateOnCallendar } from "../helpers"
+import Planet from '../images/ceres-dither-1000-serpentine.png'
+import LogoSorbonne from '../images/lettres-logo-white.svg'
+import LogoCeres from '../images/LOGO_CERES_SOMBRE-2.png'
 
 import "../style/accueil.css"
 
@@ -41,7 +41,7 @@ const HomeHeader = ({ nodes }) => {
     const [imageClass, setImageClass] = React.useState("")
     setTimeout(() => setImageClass('full'), 0)
     return (<header>
-        <div class="image-container">
+        <div className="image-container">
             <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} className={imageClass} />
             {/* <div class="gradient-overlay"></div> */}
             <img id="landing-logo" src={LogoCeres} style={{ maxWidth: "100%", margin: 0 }} />

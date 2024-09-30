@@ -8,7 +8,7 @@
 :root {
     /* Couleur de mise en exergue */
     /* --test: rgb(132, 177, 255); */
-    --main: 94, 110, 196;
+    --main: 178, 185, 220;
 
     /* --light-main-color: rgb(0, 93, 255); */
 
@@ -365,6 +365,18 @@ a:not([class]):not([id])[href^="/"]:hover {
     background-color: var(--main-color);
     color: var(--background-color) !important;
     text-decoration: none !important;
+}
+
+.small-tag.phases{
+    --phases-color: #d9d9d9;
+    color: var(--phases-color);
+    border-color: var(--phases-color);
+}
+
+.small-tag.data{
+    --data-color: #cdace7;
+    color: var(--data-color);
+    border-color: var(--data-color);
 }
 
 /* Encarts */

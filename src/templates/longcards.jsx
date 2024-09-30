@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import * as React from 'react'
-import { LongCard } from "../components/longcard"
 import Layout from '../components/layout'
+import { LongCard } from "../components/longcard"
 import { filterNodes } from "../helpers"
 import "../style/accueil.css"
 import "../style/long-cards.css"

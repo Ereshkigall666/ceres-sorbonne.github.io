@@ -1,7 +1,7 @@
-import { Tag } from "./layout"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from 'react'
+import { Tag } from "./layout"
 
 
 export const LongCard = ({ postData, toggleTag, selectedTags }) => {
