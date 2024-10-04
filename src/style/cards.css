@@ -8,7 +8,7 @@
 
 /* Petites cartes */
 
-.card {
+.small-card {
     position: relative;
     height: 22rem;
     flex: 1 1 15rem;
@@ -20,7 +20,7 @@
     overflow: hidden;
 }
 
-.card .image-card {
+.small-card .image-card {
     border-radius: calc(var(--medium-border-radius) - var(--border-width)) calc(var(--medium-border-radius) - var(--border-width)) 0 0;
     min-width: calc(100% + 2 * var(--card-padding) + 2 * var(--border-width));
     margin-left: calc(0rem - var(--card-padding) - var(--border-width));

@@ -461,12 +461,12 @@ table tr th:last-child {
 
 /* Cartes général */
 
-.card:hover,
+.small-card:hover,
 .long-card:hover {
     background-color: var(--light-background);
 }
 
-.card:hover .text-sample:before,
+.small-card:hover .text-sample:before,
 .long-card:hover .text-sample:before {
     background: linear-gradient(0deg, var(--light-background) 0%, var(--light-background) 40%, transparent);
 }
@@ -493,7 +493,7 @@ table tr th:last-child {
     border-radius: var(--medium-border-radius);
 }
 
-.card h4,
+.small-card h4,
 .long-card h4 {
     text-overflow: ellipsis;
     font-size: var(--card-title-font-size);
@@ -543,7 +543,7 @@ table tr th:last-child {
     transform: rotate(180deg);
 }
 
-.card:hover .small-tags-container::after,
+.small-card:hover .small-tags-container::after,
 .long-card:hover .small-tags-container::after {
     background: linear-gradient(90deg, var(--light-background) 0%, var(--light-background) 5%, transparent);
 }

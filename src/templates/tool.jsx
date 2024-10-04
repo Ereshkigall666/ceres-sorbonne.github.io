@@ -38,8 +38,8 @@ const BlogPost = ({ data, children }) => {
   }, []);
   return (
     <Layout>
-      <div className="container">
-        <div className="row">
+      <div className="container" style={{height: '55vh'}}>
+        <div className="row" style={{height: '100%'}}>
           <div className="col-md-9" id="mainContent">
             <div className="d-flex justify-content-between align-items-center pt-2" id="toolHeader">
               <div className="d-flex align-items-center">

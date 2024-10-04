@@ -10,7 +10,7 @@ export const Card = ({ postData, toggleTag, selectedTags }) => {
     const content = abstract ? abstract : postData.excerpt
 
     return (
-        <div className="card">
+        <div className="small-card">
             <Link className="card-link" to={`/${uuid}`} />
             {image ? (<GatsbyImage className="image-card" image={getImage(image)} alt={title} />) : (<div className="image-card" />)}
             <h4>{title}</h4>
