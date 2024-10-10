@@ -50,20 +50,20 @@ const HomeHeader = ({ nodes }) => {
 
         <div id="landing-blocks-container">
             <div className="landing-block text">
-                <h2>Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales</h2>
+                <h2>Lorem Ipsum Labs</h2>
                 <p>
-                    Le Centre d’expérimentation en méthodes numériques pour les recherches en Sciences Humaines et Sociales est une unité de service de la <a href="https://lettres.sorbonne-universite.fr/">Faculté des Lettres de Sorbonne Université</a>, créée en février 2021, dont la mission principale est d’accompagner les chercheur·ses et doctorant·es en SHS souhaitant recourir à des méthodes numériques et à des outils informatiques.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
                 <p>
-                    Les actions de CERES sont organisées autour de trois axes principaux :
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
                     <ul>
-                        <li> les réseaux sociaux numériques </li>
-                        <li> les sources patrimoniales numérisées </li>
-                        <li> le déploiement d’une infrastructure transversale de gestion des corpus et des données analytiques associées </li>
+                        <li> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.  </li>
+                        <li> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.  </li>
+                        <li> lUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</li>
                     </ul>
                 </p>
                 <p>
-                    CERES offre un <a href="/ateliers">accompagnement technique et méthodologique</a> dans la prise en main d’outils informatiques disponibles et œuvre au déploiement d’<a href="/projets">outils informatiques</a> utiles à la communauté des chercheur·ses de la Faculté des Lettres. L’unité de service conduit par ailleurs une réflexion sur le statut épistémologique de ces outils et méthodes dans la recherche en SHS, mettant en avant le caractère central de l’activité interprétative du·e la chercheur·se face aux outils informatiques. Plus largement, il s’agit de contribuer à l’émergence de nouvelles pratiques de recherche en SHS en milieu numérique, avec l'appui d’une <a href="/membres">équipe interdisciplinaire</a>.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
             <div className="landing-block">
