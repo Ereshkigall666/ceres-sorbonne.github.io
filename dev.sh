@@ -1,7 +1,7 @@
 cd src/
 if [ ! -d "./data" ];
 then
-    git clone https://github.com/CERES-Sorbonne/ceres-www-content.git ./data
+    git clone https://github.com/CERES-Sorbonne/contenu-du-site.git ./data
 fi
 cd ./data
 git pull origin main
