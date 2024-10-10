@@ -51,6 +51,7 @@ export const query = graphql`
             abstract
             sound
             uuid
+            prettyName
             }
             fields {
             date(formatString: "DD MMMM, YYYY", locale: "fr")

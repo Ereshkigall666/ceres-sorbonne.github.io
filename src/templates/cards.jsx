@@ -51,6 +51,7 @@ export const query = graphql`
             abstract
             sound
             uuid
+            prettyName
             }
             fields {
             collection

@@ -117,6 +117,7 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 uuid
+                prettyName
               }
             }
           }
@@ -227,6 +228,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String!
       event: Boolean,
       uuid: String!,
+      prettyName: String
     }
   `
   createTypes(typeDefs)

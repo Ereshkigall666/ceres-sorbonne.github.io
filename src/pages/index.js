@@ -102,6 +102,7 @@ export const query = graphql`
                 sound
                 event
                 uuid
+                prettyName
             }
             fields {
                 collection
