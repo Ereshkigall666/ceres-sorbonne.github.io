@@ -147,8 +147,9 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create all pages with the same template, this might change later if we want to do markdown pages with specifics templates
 
   result.data.allMarkdownRemark.edges.forEach((edge, index) => {
-    const fields = edge.node.fields
-    const uuid = edge.node.frontmatter.uuid
+    const fields = edge.node.fields;
+    const uuid = edge.node.frontmatter.uuid;
+    const prettyName = edge.node.frontmatter.prettyName;
 
     if(fields.slug === ""){
       return
@@ -163,6 +164,17 @@ exports.createPages = async ({ graphql, actions }) => {
         // next,
       },
     })
+    if (prettyName) {
+      createPage({
+          path: `/${prettyName}`,
+          component: path.resolve(`./src/templates/blog-post.jsx`),
+          context: {
+              slug: fields.slug,
+              // previous,
+              // next,
+          },
+      })
+    }
   })
 
   // now create tools pages
