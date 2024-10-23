@@ -23,7 +23,7 @@ def generate_markdown_page(member_dict: dict, main_header: str, position_header:
     md_page: str = make_yaml_header(
         name=member_dict[main_header], position=member_dict[position_header])
     # add photo to page
-    md_page += f"![Photo of {member_dict[main_header]}]({member_dict[photo_header]})\n\n"
+    md_page += f"![Photo of {member_dict[main_header]}]()\n\n"
     member_dict.pop(photo_header)
     for key, val in member_dict.items():
         if val != "":
