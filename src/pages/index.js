@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import { filterNodes, isDateOnCallendar } from "../helpers"
 import Planet from '../images/ceres-dither-1000-serpentine.png'
 import LogoSorbonne from '../images/lettres-logo-white.svg'
-import LogoCeres from '../images/LOGO_CERES_SOMBRE-2.png'
+import LogoHDEA from '../images/logo-hdea.jpg'
 
 import "../style/accueil.css"
 
@@ -44,26 +44,58 @@ const HomeHeader = ({ nodes }) => {
         <div className="image-container">
             <img id="landing-image" src={Planet} style={{ maxWidth: "100%", margin: 0 }} className={imageClass} />
             {/* <div class="gradient-overlay"></div> */}
-            <img id="landing-logo" src={LogoCeres} style={{ maxWidth: "100%", margin: 0 }} />
+            <img id="landing-logo" src={LogoHDEA} style={{ maxWidth: "100%", maxHeight: "100%", margin: 0 }} />
             <img id="landing-sorbonne" src={LogoSorbonne} style={{ maxWidth: "100%", margin: 0, height: "194px", width: "500px" }} />
         </div>
 
         <div id="landing-blocks-container">
             <div className="landing-block text">
-                <h2>Lorem Ipsum Labs</h2>
+                <h2><center>HDEA</center></h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-                    <ul>
-                        <li> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.  </li>
-                        <li> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.  </li>
-                        <li> lUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</li>
-                    </ul>
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    L’unité Histoire et dynamique des espaces anglophones (HDEA, UR 4086) est une unité de Sorbonne Université qui rassemble principalement des membres de la 11e section du CNU, travaillant sur les questions politiques, sociales, économiques et culturelles des pays anglophones.
+                    </p>
+                    <p>Pour 2025-2030, ses travaux sont structurés en trois axes principaux:
+                        <ol>
+                            <li><strong>Savoirs et cultures</strong></li> 
+                            <ul>
+                                <li>
+                                    Circulations, échanges et transferts culturels.
+                                </li>
+                                <li>
+                                    Religion(s) et spiritualités.
+                                </li>
+                                <li>
+                                    Médias, images et cultures populaires.
+                                </li>
+                            </ul>
+                            <li><strong>Sociétés et gouvernements</strong></li>
+                            <ul>
+                                <li>
+                                    Dynamiques économiques et sociales.
+                                </li>
+                                <li>
+                                    Politiques publiques – santé , famille, éducation.
+                                </li>
+                                <li>
+                                    Droit et relations internationales.
+                                </li>
+
+                            </ul>
+                            <li><strong>Nature, Espaces et Sociétés</strong></li>
+                            <ul>
+                                <li>
+                                    Études environnementales.
+                                </li>
+                                <li>
+                                    Études californiennes.
+                                </li>
+                                <li>
+                                    Territoires urbains.
+                                </li>
+
+                            </ul>
+
+                        </ol>
                 </p>
             </div>
             <div className="landing-block">
